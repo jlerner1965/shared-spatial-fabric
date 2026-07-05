@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as UseCasesRouteImport } from './routes/use-cases'
 import { Route as TechnologyRouteImport } from './routes/technology'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as NewsRouteImport } from './routes/news'
@@ -33,6 +34,11 @@ const UseCasesRoute = UseCasesRouteImport.update({
 const TechnologyRoute = TechnologyRouteImport.update({
   id: '/technology',
   path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlatformRoute = PlatformRouteImport.update({
@@ -79,6 +85,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/platform': typeof PlatformRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
@@ -91,6 +98,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/platform': typeof PlatformRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
@@ -104,6 +112,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/platform': typeof PlatformRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
@@ -118,6 +127,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/partners'
     | '/platform'
+    | '/sitemap.xml'
     | '/technology'
     | '/use-cases'
     | '/vision'
@@ -130,6 +140,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/partners'
     | '/platform'
+    | '/sitemap.xml'
     | '/technology'
     | '/use-cases'
     | '/vision'
@@ -142,6 +153,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/partners'
     | '/platform'
+    | '/sitemap.xml'
     | '/technology'
     | '/use-cases'
     | '/vision'
@@ -155,6 +167,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRoute
   PartnersRoute: typeof PartnersRoute
   PlatformRoute: typeof PlatformRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TechnologyRoute: typeof TechnologyRoute
   UseCasesRoute: typeof UseCasesRoute
   VisionRoute: typeof VisionRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/technology'
       fullPath: '/technology'
       preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/platform': {
@@ -243,6 +263,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRoute,
   PartnersRoute: PartnersRoute,
   PlatformRoute: PlatformRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TechnologyRoute: TechnologyRoute,
   UseCasesRoute: UseCasesRoute,
   VisionRoute: VisionRoute,
