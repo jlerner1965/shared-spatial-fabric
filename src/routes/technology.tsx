@@ -132,7 +132,7 @@ const PILLARS = [
   {
     icon: Users,
     title: "Living Entities as Dynamic Anchors",
-    desc: "Humans and pets act as natural, moving anchors for AR content — expressed through stock or customizable skins. Imagine a family adventure where a Wookiee-inspired guardian dynamically overlays one participant, responding to shared movement. Creative performances, targeted advertising, and new revenue streams — turning personal expression into shared experiences in the physical world.",
+    desc: "Humans and pets act as natural, moving anchors for AR content — expressed through stock or customizable skins. Imagine a family adventure where an original guardian creature dynamically overlays one participant, responding to shared movement. Creative performances, targeted advertising, and new revenue streams — turning personal expression into shared experiences in the physical world.",
   },
   {
     icon: UserCircle2,
