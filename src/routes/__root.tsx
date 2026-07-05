@@ -77,28 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AR2 — The Infrastructure for Collaborative Spatial Computing" },
-      {
-        name: "description",
-        content:
-          "AR2 is the foundational platform for persistent, shared, real-world augmented reality — recognition, authorization, and display for the next generation of spatial computing.",
-      },
-      { name: "author", content: "AR2" },
+      { title: "AR2 Project — Collaborative AR in the Real World" },
+      { name: "description", content: "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging." },
+      { name: "author", content: "The AR2 Project" },
       { name: "theme-color", content: "#0a1024" },
-      { property: "og:title", content: "AR2 — Collaborative Spatial Computing" },
-      {
-        property: "og:description",
-        content:
-          "The foundational platform for shared augmented reality. Recognition, Authorization, Display.",
-      },
+      { property: "og:title", content: "AR2 Project — Collaborative AR in the Real World" },
+      { property: "og:description", content: "Shared AR experiences anchored to real people, pets, and places." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "AR2 — Collaborative Spatial Computing" },
-      {
-        name: "twitter:description",
-        content:
-          "The foundational platform for shared augmented reality. Recognition, Authorization, Display.",
-      },
     ],
     links: [
       {
@@ -108,10 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" },
     ],
   }),
   shellComponent: RootShell,
