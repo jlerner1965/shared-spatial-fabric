@@ -180,6 +180,9 @@ function ContactForm() {
             className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
           />
         </div>
+        <p className="text-[11px] leading-relaxed text-muted-foreground/70">
+          We use your details only to respond to this inquiry — no newsletters, no third-party sharing.
+        </p>
         <button
           type="submit"
           disabled={submitting}
