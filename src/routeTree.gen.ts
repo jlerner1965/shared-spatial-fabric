@@ -13,6 +13,7 @@ import { Route as VisionRouteImport } from './routes/vision'
 import { Route as UseCasesRouteImport } from './routes/use-cases'
 import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const PlatformRoute = PlatformRouteImport.update({
   path: '/platform',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeadershipRoute = LeadershipRouteImport.update({
   id: '/leadership',
   path: '/leadership',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/leadership': typeof LeadershipRoute
+  '/news': typeof NewsRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/leadership': typeof LeadershipRoute
+  '/news': typeof NewsRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/leadership': typeof LeadershipRoute
+  '/news': typeof NewsRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/use-cases': typeof UseCasesRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/developers'
     | '/leadership'
+    | '/news'
     | '/platform'
     | '/technology'
     | '/use-cases'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/developers'
     | '/leadership'
+    | '/news'
     | '/platform'
     | '/technology'
     | '/use-cases'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/developers'
     | '/leadership'
+    | '/news'
     | '/platform'
     | '/technology'
     | '/use-cases'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DevelopersRoute: typeof DevelopersRoute
   LeadershipRoute: typeof LeadershipRoute
+  NewsRoute: typeof NewsRoute
   PlatformRoute: typeof PlatformRoute
   TechnologyRoute: typeof TechnologyRoute
   UseCasesRoute: typeof UseCasesRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leadership': {
       id: '/leadership'
       path: '/leadership'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DevelopersRoute: DevelopersRoute,
   LeadershipRoute: LeadershipRoute,
+  NewsRoute: NewsRoute,
   PlatformRoute: PlatformRoute,
   TechnologyRoute: TechnologyRoute,
   UseCasesRoute: UseCasesRoute,
