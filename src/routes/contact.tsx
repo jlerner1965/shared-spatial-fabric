@@ -69,11 +69,16 @@ function ContactForm() {
   const [email, setEmail] = useState("");
   const [organization, setOrganization] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (website.trim()) {
+      setSent(true);
+      return;
+    }
     const trimmedName = name.trim();
     const trimmedEmail = email.trim();
     const trimmedMessage = message.trim();
@@ -129,6 +134,9 @@ function ContactForm() {
       <p className="mt-2 text-sm text-muted-foreground">We respond to serious inquiries within two business days.</p>
 
       <div className="mt-6 space-y-4">
+        <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+          <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} /></label>
+        </div>
         <div>
           <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Name</label>
           <input
