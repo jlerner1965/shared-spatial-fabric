@@ -1,11 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site-layout";
 import heroTech from "@/assets/hero-tech.jpg.asset.json";
-import { Eye, Shield, Sparkles, Users, UserCircle2, Radio, MessageSquare, Heart, Handshake, Lock, Unlock } from "lucide-react";
-import sceneFamily from "@/assets/scene-family.jpg.asset.json";
-import sceneStudents from "@/assets/scene-students.jpg.asset.json";
-import sceneConcert from "@/assets/scene-concert.jpg.asset.json";
-import sceneSignpost from "@/assets/scene-signpost.jpg.asset.json";
+import { Eye, Shield, Sparkles, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
@@ -14,15 +10,29 @@ export const Route = createFileRoute("/technology")({
       { name: "description", content: "Recognition + Authorization + Display: the AR² RAD concept powering personal IDs, digital skins, multi-user performances, and immersive monetization." },
       { property: "og:title", content: "Technology — AR² RAD" },
       { property: "og:description", content: "Recognition, Authorization, Display." },
+      { name: "twitter:title", content: "Technology — AR² RAD" },
+      { name: "twitter:description", content: "Recognition, Authorization, Display." },
     ],
   }),
   component: TechPage,
 });
 
 const RAD = [
-  { icon: Eye, letter: "R", title: "Recognition", desc: "Identify people, pets, objects, and places as spatial anchors — the substrate for every anchored experience." },
-  { icon: Shield, letter: "A", title: "Authorization", desc: "Consent-based permissions govern what content overlays whom, protecting users, creators, and IP holders." },
-  { icon: Sparkles, letter: "D", title: "Display", desc: "Render shared, synchronized AR content across multiple viewers in real time — the same anchor, many devices." },
+  {
+    icon: Eye, letter: "R", title: "Recognition",
+    desc: "Identify people, pets, objects, and places as spatial anchors — the substrate for every anchored experience.",
+    families: ["Living Entity as Marker", "Smart Sign Post", "Constructed Objects"],
+  },
+  {
+    icon: Shield, letter: "A", title: "Authorization",
+    desc: "Consent-based permissions govern what content overlays whom, protecting users, creators, and IP holders.",
+    families: ["Personalized Rendering", "AR Messengering"],
+  },
+  {
+    icon: Sparkles, letter: "D", title: "Display",
+    desc: "Render shared, synchronized AR content across multiple viewers in real time — the same anchor, many devices.",
+    families: ["Personalized Rendering", "AR Messengering"],
+  },
 ];
 
 function TechPage() {
@@ -38,7 +48,7 @@ function TechPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-32">
         <div className="grid gap-6 md:grid-cols-3">
-          {RAD.map(({ icon: Icon, letter, title, desc }) => (
+          {RAD.map(({ icon: Icon, letter, title, desc, families }) => (
             <div key={letter} className="relative rounded-2xl border border-border/60 bg-card p-8">
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-6xl font-semibold text-primary text-glow">{letter}</span>
@@ -46,6 +56,12 @@ function TechPage() {
               </div>
               <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight">{title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+              <div className="mt-5 border-t border-border/60 pt-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-primary/80">Patent families</p>
+                <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+                  {families.map((f) => <li key={f}>· {f}</li>)}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -54,6 +70,9 @@ function TechPage() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">What we build</p>
             <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">Core AR technologies.</h2>
+            <p className="mt-6 text-muted-foreground">
+              Four capability areas, all expressed through the RAD primitives and grounded in 34 granted US patents.
+            </p>
           </div>
           <ul className="space-y-6">
             {[
@@ -71,96 +90,25 @@ function TechPage() {
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-gradient-to-b from-transparent to-primary/5">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Our Vision</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
-              Shared experiences. <span className="text-primary text-glow">Genuine connection.</span>
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              In a time of increasing digital isolation, AR glasses should not pull us deeper into screens — they should help us engage more fully with the people and places right in front of us. We approach this through the lens of shared experiences, with a strong emphasis on social connectivity: dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connection.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
-            {PILLARS.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-2xl border border-border/60 bg-card p-8">
-                <div className="overflow-hidden rounded-xl border border-border/60 -m-2 mb-6">
-                  <img
-                    src={(PILLAR_IMAGES as Record<string, string>)[title]}
-                    alt={title}
-                    loading="lazy"
-                    width={1024}
-                    height={1024}
-                    className="aspect-[16/10] w-full object-cover"
-                  />
-                </div>
-                <Icon size={22} className="text-primary" />
-                <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-24 grid gap-12 md:grid-cols-2">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">The Ecosystem</p>
-              <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
-                Profit motives aligned with what's good for real humans.
-              </h2>
-              <p className="mt-6 text-muted-foreground">
-                These applications enable companies and users to create systems and markets for real humans in real spaces — evolving digital layers over the physical world, discovered and shared in person.
-              </p>
-            </div>
-            <ul className="space-y-4">
-              {PRINCIPLES.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-4 rounded-xl border border-border/60 bg-card p-5">
-                  <Icon size={20} className="mt-0.5 shrink-0 text-primary" />
-                  <span className="text-sm leading-relaxed">{text}</span>
-                </li>
-              ))}
-            </ul>
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Next</p>
+          <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight md:text-5xl">
+            The <span className="text-primary text-glow">why</span> and the <span className="text-primary text-glow">who</span>.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
+            RAD is the how. See the vision it enables, or the concrete use cases already mapped out.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link to="/vision" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]">
+              Read the vision <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link to="/use-cases" className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-6 py-3 text-sm font-medium backdrop-blur hover:border-primary/40 hover:text-primary">
+              See use cases
+            </Link>
           </div>
         </div>
       </section>
     </SiteLayout>
   );
 }
-
-const PILLARS = [
-  {
-    icon: Users,
-    title: "Living Entities as Dynamic Anchors",
-    desc: "Humans and pets act as natural, moving anchors for AR content — expressed through stock or customizable skins. Imagine a family adventure where an original guardian creature dynamically overlays one participant, responding to shared movement. Creative performances, targeted advertising, and new revenue streams — turning personal expression into shared experiences in the physical world.",
-  },
-  {
-    icon: UserCircle2,
-    title: "Virtual Identification & Real-Time Connection",
-    desc: "Consent-based overlays of profiles, links, and calendar data directly into the real world. For established social platforms, this pivots users away from the empty calories of online spaces into meaningful, in-person interactions.",
-  },
-  {
-    icon: Radio,
-    title: "AR Entertainment",
-    desc: "Friends experience concerts, games, and live events in real time — together, anywhere. Multiple users view, hear, and interact with the same anchored content simultaneously.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Persistent Messaging",
-    desc: "Record embodied messages or performances in custom or fantasy forms that remain anchored in the physical world for later access. Sports highlights on a smart signpost, TED-style talks, live music sessions, adventures among friends — discovered, replied to, and built upon by communities as evolving digital layers over physical spaces.",
-  },
-];
-
-const PILLAR_IMAGES: Record<string, string> = {
-  "Living Entities as Dynamic Anchors": sceneFamily.url,
-  "Virtual Identification & Real-Time Connection": sceneStudents.url,
-  "AR Entertainment": sceneConcert.url,
-  "Persistent Messaging": sceneSignpost.url,
-};
-
-const PRINCIPLES = [
-  { icon: Heart, text: "Brings people together in person." },
-  { icon: Handshake, text: "Empowers developers and fairly rewards creators." },
-  { icon: Lock, text: "Protects content creators and IP holders." },
-  { icon: Unlock, text: "Maximizes openness — with strong parental tools." },
-];
