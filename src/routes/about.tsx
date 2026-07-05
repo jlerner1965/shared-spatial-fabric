@@ -56,7 +56,7 @@ function AboutPage() {
           A team of inventors, scientists, and operators.
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists — building an AR solution grounded in the RAD method and a foundation of 35+ United States Patents.
+          Inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists — building an AR solution grounded in the RAD method and a foundation of 34 granted United States patents.
         </p>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -93,7 +93,7 @@ function AboutPage() {
             AR<sup className="text-primary">2</sup> — 34 United States Patents, and counting.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            A foundational patent portfolio covering the primitives of shared augmented reality — personalized rendering, living-entity anchors, constructed objects, smart sign posts, and AR messengering.
+            A foundational patent portfolio covering the primitives of shared augmented reality — personalized rendering, living-entity anchors, constructed objects, smart sign posts, and AR messengering. First patent granted 2018; portfolio grown to 34 issued US patents.
           </p>
 
           <div className="mt-12">

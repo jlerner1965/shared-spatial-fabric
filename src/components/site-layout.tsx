@@ -11,7 +11,6 @@ const NAV = [
   { to: "/use-cases", label: "Use Cases" },
   { to: "/news", label: "News" },
   { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {

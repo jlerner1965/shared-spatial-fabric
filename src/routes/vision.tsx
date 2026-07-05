@@ -23,7 +23,7 @@ const SCENES = [
     title: "Living Entities as Dynamic Anchors",
     rad: "Recognition · Authorization · Display",
     alt: "Family with a glowing guardian creature overlay at dusk",
-    desc: "Imagine a family adventure or group activity where a Wookiee-inspired guardian figure dynamically overlays one participant, intelligently responding to shared movements and actions. Personal expression becomes a shared, engaging experience in the physical world.",
+    desc: "Imagine a family adventure or group activity where an original guardian creature dynamically overlays one participant, intelligently responding to shared movements and actions. Personal expression becomes a shared, engaging experience in the physical world.",
   },
   {
     tag: "02",
@@ -55,10 +55,10 @@ const SCENES = [
 ];
 
 const STATS = [
-  { k: "2019", v: "Founded" },
-  { k: "34", v: "US Patents" },
+  { k: "34", v: "Granted US Patents" },
   { k: "5", v: "Patent Families" },
-  { k: "LA", v: "Los Angeles, CA" },
+  { k: "2018", v: "First Patent Granted" },
+  { k: "USC", v: "Faculty Advisors" },
 ];
 
 export const Route = createFileRoute("/vision")({

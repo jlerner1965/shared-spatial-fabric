@@ -54,12 +54,12 @@ function PlatformPage() {
           </p>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
-            <MarketStat value="$763M → $7.34B" label="Headworn AR consumer spending, 2024–2029" />
-            <MarketStat value="57.27%" label="Projected CAGR, 2024–2029" />
-            <MarketStat value="$4.57B" label="Consumer AR hardware spend by 2029" />
+            <MarketStat value="$2.61B → $13.05B" label="Headworn AR global revenue, 2024–2029" />
+            <MarketStat value="37.92%" label="Projected CAGR, 2024–2029" />
+            <MarketStat value="34" label="Granted US patents anchoring the platform" />
           </div>
           <p className="mt-4 text-xs text-muted-foreground/70">
-            Sources: ARtillery Intelligence, Harvard Business Review, Pew Research Center.
+            Market figures: ARtillery Intelligence, <em>Headworn AR Global Revenue Forecast: 2024–2029</em> (June 2025).
           </p>
         </div>
       </section>
