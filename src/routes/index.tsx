@@ -52,20 +52,33 @@ function Index() {
             <Sparkles size={12} /> Recognition · Authorization · Display
           </div>
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
-            Collaborative AR<br />
-            <span className="text-primary text-glow">in the real world.</span>
+            Shared AR, anchored to <span className="text-primary text-glow">the real world.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            AR that pulls us out of screens and back into the places and people right in front of us. Shared, spatially anchored experiences built for real humans in real spaces.
+            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/vision" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]">
-              Explore the vision <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+            <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]">
+              Book a licensing conversation <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link to="/technology" className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-6 py-3 text-sm font-medium backdrop-blur hover:border-primary/40 hover:text-primary">
               How it works
             </Link>
           </div>
+          {/* Trust bar */}
+          <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
+            {[
+              { k: "34", v: "Granted US Patents" },
+              { k: "5", v: "Patent Families" },
+              { k: "USC", v: "Faculty Advisors" },
+              { k: "2018", v: "First Patent Granted" },
+            ].map((s) => (
+              <div key={s.v}>
+                <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{s.k}</dt>
+                <dd className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

@@ -18,9 +18,9 @@ export const Route = createFileRoute("/news")({
 });
 
 const ARTICLES = [
-  { date: "July 2026", tag: "Technology", title: "The AR² RAD lattice: how Recognition, Authorization, and Display fit together", excerpt: "A technical look at how three primitives combine into a shared spatial substrate — and why the anchor is the atomic unit of collaborative AR.", image: n1.url },
-  { date: "June 2026", tag: "Platform", title: "Building the creator ecosystem for spatially anchored AR", excerpt: "Fair rewards, IP protection, and open interoperability — the values shaping our developer platform and its rollout.", image: n2.url },
-  { date: "May 2026", tag: "Industry", title: "From mobile lenses to shared headworn AR: a conversation on the 2026 shift", excerpt: "Notes from a recent industry stage on de-risking headworn launches by strengthening the shared-experience layer first.", image: n3.url },
+  { date: "Coming soon", tag: "Technology", title: "The AR² RAD framework: Recognition, Authorization, Display", excerpt: "A technical primer on the three primitives at the core of AR2's patent portfolio — how they combine into a shared spatial substrate for multi-user AR.", image: n1.url, alt: "Abstract network of cyan spatial anchors over a city map" },
+  { date: "Coming soon", tag: "Portfolio", title: "Inside the 34-patent AR² portfolio", excerpt: "A walkthrough of the five patent families — Personalized Rendering, Constructed Objects, Smart Sign Post, Living Entity as Marker, and AR Messengering — and the claims that underpin each.", image: n2.url, alt: "USPTO patent diagram overlay on a modern interior" },
+  { date: "Coming soon", tag: "Industry", title: "From mobile lenses to shared headworn AR", excerpt: "Why the shift from single-user mobile AR to shared headworn AR needs a common identification and display substrate — and how the RAD primitives fit.", image: n3.url, alt: "Person with AR glasses looking at a shared holographic scene" },
 ];
 
 function NewsPage() {
@@ -34,11 +34,14 @@ function NewsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-24">
+        <p className="mb-10 max-w-2xl text-sm text-muted-foreground">
+          Long-form pieces on the AR² RAD framework, the underlying patent families, and the industry shift to shared headworn AR. Working drafts — sign up via the contact page for release notifications.
+        </p>
         <div className="space-y-10">
           {ARTICLES.map((a) => (
             <article key={a.title} className="group grid gap-8 border-b border-border/40 pb-10 md:grid-cols-[1.2fr_2fr] md:items-center">
               <div className="aspect-[16/10] overflow-hidden rounded-xl">
-                <img src={a.image} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={a.image} alt={a.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div>
                 <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary">
