@@ -3,7 +3,6 @@ import { PageHero, SiteLayout } from "@/components/site-layout";
 import heroContact from "@/assets/hero-contact.jpg.asset.json";
 import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
@@ -88,13 +87,11 @@ function ContactForm() {
     }
     setSubmitting(true);
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
-        name: trimmedName,
-        email: trimmedEmail,
-        organization: organization.trim() || null,
-        message: trimmedMessage,
-      });
-      if (error) throw error;
+      const subject = encodeURIComponent(`AR2 inquiry — ${trimmedName}`);
+      const body = encodeURIComponent(
+        `Name: ${trimmedName}\nEmail: ${trimmedEmail}\nOrganization: ${organization.trim() || "—"}\n\n${trimmedMessage}`,
+      );
+      window.location.href = `mailto:nickh@AR2project.com?subject=${subject}&body=${body}`;
       setSent(true);
       setName("");
       setEmail("");
