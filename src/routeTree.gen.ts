@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VisionRoute = VisionRouteImport.update({
@@ -29,6 +30,11 @@ const PlatformRoute = PlatformRouteImport.update({
   path: '/platform',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/vision': typeof VisionRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/platform' | '/technology' | '/vision'
+  fullPaths: '/' | '/developers' | '/platform' | '/technology' | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/platform' | '/technology' | '/vision'
-  id: '__root__' | '/' | '/platform' | '/technology' | '/vision'
+  to: '/' | '/developers' | '/platform' | '/technology' | '/vision'
+  id: '__root__' | '/' | '/developers' | '/platform' | '/technology' | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DevelopersRoute: typeof DevelopersRoute
   PlatformRoute: typeof PlatformRoute
   TechnologyRoute: typeof TechnologyRoute
   VisionRoute: typeof VisionRoute
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DevelopersRoute: DevelopersRoute,
   PlatformRoute: PlatformRoute,
   TechnologyRoute: TechnologyRoute,
   VisionRoute: VisionRoute,
