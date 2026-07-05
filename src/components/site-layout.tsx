@@ -91,9 +91,13 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-start justify-between gap-2 border-t border-border/40 pt-6 text-xs text-muted-foreground md:flex-row">
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border/40 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} The AR2 Project. All rights reserved.</p>
-          <p>Recognition · Authorization · Display</p>
+          <div className="flex items-center gap-5">
+            <Link to="/privacy" className="hover:text-primary">Privacy</Link>
+            <Link to="/terms" className="hover:text-primary">Terms</Link>
+            <span>Recognition · Authorization · Display</span>
+          </div>
         </div>
       </div>
     </footer>
