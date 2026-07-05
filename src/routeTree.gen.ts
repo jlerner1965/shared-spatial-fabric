@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
+import { Route as UseCasesRouteImport } from './routes/use-cases'
 import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as DevelopersRouteImport } from './routes/developers'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
   path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UseCasesRoute = UseCasesRouteImport.update({
+  id: '/use-cases',
+  path: '/use-cases',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TechnologyRoute = TechnologyRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
+  '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
+  '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,34 @@ export interface FileRoutesById {
   '/developers': typeof DevelopersRoute
   '/platform': typeof PlatformRoute
   '/technology': typeof TechnologyRoute
+  '/use-cases': typeof UseCasesRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/developers' | '/platform' | '/technology' | '/vision'
+  fullPaths:
+    | '/'
+    | '/developers'
+    | '/platform'
+    | '/technology'
+    | '/use-cases'
+    | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/developers' | '/platform' | '/technology' | '/vision'
-  id: '__root__' | '/' | '/developers' | '/platform' | '/technology' | '/vision'
+  to:
+    | '/'
+    | '/developers'
+    | '/platform'
+    | '/technology'
+    | '/use-cases'
+    | '/vision'
+  id:
+    | '__root__'
+    | '/'
+    | '/developers'
+    | '/platform'
+    | '/technology'
+    | '/use-cases'
+    | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +104,7 @@ export interface RootRouteChildren {
   DevelopersRoute: typeof DevelopersRoute
   PlatformRoute: typeof PlatformRoute
   TechnologyRoute: typeof TechnologyRoute
+  UseCasesRoute: typeof UseCasesRoute
   VisionRoute: typeof VisionRoute
 }
 
@@ -86,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/vision'
       fullPath: '/vision'
       preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/use-cases': {
+      id: '/use-cases'
+      path: '/use-cases'
+      fullPath: '/use-cases'
+      preLoaderRoute: typeof UseCasesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/technology': {
@@ -124,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   DevelopersRoute: DevelopersRoute,
   PlatformRoute: PlatformRoute,
   TechnologyRoute: TechnologyRoute,
+  UseCasesRoute: UseCasesRoute,
   VisionRoute: VisionRoute,
 }
 export const routeTree = rootRouteImport
