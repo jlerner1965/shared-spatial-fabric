@@ -1,105 +1,77 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, PageHero } from "@/components/site/PageShell";
-import { Database, KeyRound, Layers, Radar, Cpu, Cloud } from "lucide-react";
+import { PageHero, SiteLayout } from "@/components/site-layout";
+import heroPlatform from "@/assets/hero-platform.jpg.asset.json";
 
 export const Route = createFileRoute("/platform")({
   head: () => ({
     meta: [
-      { title: "Platform — AR2" },
-      {
-        name: "description",
-        content:
-          "AR2's platform architecture — SDKs, APIs, spatial databases, permission engine, rendering, and identity as one coherent system.",
-      },
-      { property: "og:title", content: "Platform — AR2" },
-      { property: "og:description", content: "SDKs, APIs, and the shared spatial layer." },
+      { title: "Platform — AR2 Project" },
+      { name: "description", content: "The AR2 Platform gives developers and creators the primitives to build spatially anchored, multi-user AR experiences — with fair reward and strong IP protection." },
+      { property: "og:title", content: "Platform — AR2 Project" },
+      { property: "og:description", content: "Developer primitives for shared, spatially anchored AR." },
     ],
   }),
-  component: Platform,
+  component: PlatformPage,
 });
 
-const stack = [
-  { icon: Layers, t: "SDKs", d: "iOS, Android, Unity, Unreal, Web — one API surface across every runtime." },
-  { icon: Cpu, t: "Rendering layer", d: "Deterministic hologram rendering with device-native performance." },
-  { icon: Radar, t: "Spatial database", d: "Persistent anchors, entities, and events indexed at world scale." },
-  { icon: KeyRound, t: "Permission engine", d: "Rules and roles for every anchor, message, and holographic surface." },
-  { icon: Database, t: "Identity layer", d: "Portable identity for humans, entities, and enterprise directories." },
-  { icon: Cloud, t: "REST + realtime APIs", d: "HTTP for control plane, streaming for state and collaboration." },
-];
-
-const snippet = `import { AR2 } from "@ar2/sdk";
-
-const ar2 = new AR2({ apiKey: process.env.AR2_KEY });
-
-// Anchor a persistent, shared hologram to a location
-const anchor = await ar2.anchors.create({
-  location: { lat: 37.7749, lng: -122.4194 },
-  entity:   "team-artifact",
-  visibleTo: ["group:design-team"],
-  content:  { type: "gltf", url: "cdn://sculpture.glb" },
-});
-
-// Subscribe to real-time collaboration
-ar2.anchors.on(anchor.id, "update", (state) => {
-  console.log("shared state:", state);
-});`;
-
-function Platform() {
+function PlatformPage() {
   return (
-    <PageShell>
+    <SiteLayout>
       <PageHero
-        eyebrow="Platform"
-        title={
-          <>
-            One <span className="text-gradient">shared</span> layer.
-            <br />
-            Every AR runtime.
-          </>
-        }
-        subtitle="AR2 provides the primitives every AR product rebuilds from scratch — as one cohesive, cross-platform infrastructure."
+        eyebrow="Developer Platform"
+        title={<>Build for <span className="text-primary text-glow">real spaces.</span></>}
+        subtitle="A creator platform for spatially anchored AR — Recognition, Authorization, and Display as callable primitives, with monetization and IP protection built in."
+        image={heroPlatform.url}
+        imageAlt="Developer desk with holographic UI panels floating above a laptop"
       />
 
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {stack.map((s) => (
-            <div key={s.t} className="glass rounded-2xl p-6">
-              <s.icon className="size-6 text-[var(--cyan)]" />
-              <h3 className="mt-4 font-display text-xl">{s.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+      <section className="mx-auto max-w-7xl px-6 py-32">
+        <div className="grid gap-12 lg:grid-cols-3">
+          {[
+            { title: "Anchor SDK", desc: "Register living entities, objects, and places as persistent anchors. Consent, permissions, and lifecycle handled." },
+            { title: "Skins Studio", desc: "Author stock and customizable overlays for humans and pets. Rig once, deploy across every compatible headset and phone." },
+            { title: "Sessions", desc: "Multi-user synchronization at low latency — everyone sees the same performance, ad, or message on the same anchor." },
+            { title: "Monetization", desc: "Programmatic marketplaces for skins, performances, and location-based advertising. Fair splits, transparent attribution." },
+            { title: "IP & Rights", desc: "Enforce creator rights and IP holder policies at the anchor level. Strong parental controls by default." },
+            { title: "Openness", desc: "Interoperable with existing AR ecosystems — Lens Studio, headworn platforms, mobile. Bring your existing users." },
+          ].map((f) => (
+            <div key={f.title} className="rounded-xl border border-border/60 bg-card p-7 transition-all hover:border-primary/50">
+              <h3 className="font-display text-xl font-semibold tracking-tight">{f.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-32">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--gold)]">
-              Developer surface
-            </p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">
-              A single API for every anchor, entity, and interaction.
-            </h2>
-            <p className="mt-6 text-muted-foreground">
-              The SDK is intentionally small. Anchors, entities, permissions, events. Everything
-              else composes from these primitives.
-            </p>
+      <section className="border-t border-border/40">
+        <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">For Platforms</p>
+          <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight md:text-5xl">
+            Accelerate the shift from mobile lenses to shared, headworn AR.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
+            AR2's virtual identification and anchoring technologies deliver an enhanced layer of communication and sharing — de-risking headworn launches while strengthening existing mobile AR revenue.
+          </p>
+
+          <div className="mt-16 grid gap-6 sm:grid-cols-3">
+            <MarketStat value="$763M → $7.34B" label="Headworn AR consumer spending, 2024–2029" />
+            <MarketStat value="57.27%" label="Projected CAGR, 2024–2029" />
+            <MarketStat value="$4.57B" label="Consumer AR hardware spend by 2029" />
           </div>
-          <div className="glass overflow-hidden rounded-2xl">
-            <div className="flex items-center gap-2 border-b border-white/5 bg-white/[0.03] px-4 py-3">
-              <span className="size-2.5 rounded-full bg-[oklch(0.7_0.18_25)]" />
-              <span className="size-2.5 rounded-full bg-[var(--gold)]" />
-              <span className="size-2.5 rounded-full bg-[var(--emerald-soft)]" />
-              <span className="ml-2 font-mono text-xs text-muted-foreground">
-                anchor.example.ts
-              </span>
-            </div>
-            <pre className="overflow-x-auto p-6 font-mono text-[13px] leading-relaxed text-foreground/90">
-              <code>{snippet}</code>
-            </pre>
-          </div>
+          <p className="mt-4 text-xs text-muted-foreground/70">
+            Sources: ARtillery Intelligence, Harvard Business Review, Pew Research Center.
+          </p>
         </div>
       </section>
-    </PageShell>
+    </SiteLayout>
+  );
+}
+
+function MarketStat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-2xl border border-border/60 bg-card p-6 text-left">
+      <div className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{value}</div>
+      <div className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{label}</div>
+    </div>
   );
 }

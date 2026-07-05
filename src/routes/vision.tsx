@@ -1,89 +1,97 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, PageHero } from "@/components/site/PageShell";
-import { Users, Heart, Palette, Code2, Lock, ShieldCheck, Leaf, Baby } from "lucide-react";
+import { PageHero, SiteLayout } from "@/components/site-layout";
+import heroVision from "@/assets/hero-vision.jpg.asset.json";
+import sceneFamily from "@/assets/scene-family.jpg.asset.json";
+import sceneStudents from "@/assets/scene-students.jpg.asset.json";
+import sceneConcert from "@/assets/scene-concert.jpg.asset.json";
+import sceneSignpost from "@/assets/scene-signpost.jpg.asset.json";
 
 export const Route = createFileRoute("/vision")({
   head: () => ({
     meta: [
-      { title: "Vision — AR2" },
-      {
-        name: "description",
-        content:
-          "Why AR should strengthen — not replace — human relationships. The AR2 philosophy of shared, ethical, collaborative spatial computing.",
-      },
-      { property: "og:title", content: "Vision — AR2" },
-      {
-        property: "og:description",
-        content: "AR that augments reality instead of replacing it.",
-      },
+      { title: "Vision — AR2 Project" },
+      { name: "description", content: "Our vision centers on shared experiences and genuine human connection made possible by AR glasses — engaging more fully with the people and places right in front of us." },
+      { property: "og:title", content: "Vision — AR2 Project" },
+      { property: "og:description", content: "Shared experiences and genuine human connection through AR." },
     ],
   }),
-  component: Vision,
+  component: VisionPage,
 });
 
-const tenets = [
-  { icon: Users, t: "Shared experiences", d: "AR should be something you do with others, not something you disappear into alone." },
-  { icon: Heart, t: "Social connection", d: "Technology succeeds when it deepens real-world relationships between real people." },
-  { icon: Palette, t: "Collaborative creativity", d: "Anyone can leave art, memory, and meaning anchored to the physical world." },
-  { icon: Code2, t: "Developer ecosystem", d: "An open platform where thousands of teams can build compatible experiences." },
-  { icon: Lock, t: "Content ownership", d: "Creators and users own their identity, their content, and who can see it." },
-  { icon: ShieldCheck, t: "Privacy by design", d: "Recognition and identity are opt-in, permissioned, and auditable at every layer." },
-  { icon: Baby, t: "Parental controls", d: "Families can shape what children see, share, and encounter in shared space." },
-  { icon: Leaf, t: "Ethical AR", d: "We design for attention, wellbeing, and long-term trust — never engagement at any cost." },
-];
-
-function Vision() {
+function VisionPage() {
   return (
-    <PageShell>
+    <SiteLayout>
       <PageHero
         eyebrow="Our Vision"
-        title={
-          <>
-            Augment reality.
-            <br />
-            Don't <span className="text-gradient">replace</span> it.
-          </>
-        }
-        subtitle="The most valuable use of augmented reality is not another screen to disappear into. It is a shared layer that helps people engage more deeply with each other and the world around them."
+        title={<>A quiet possibility, <span className="text-primary text-glow">shared out loud.</span></>}
+        subtitle="AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us."
+        image={heroVision.url}
+        imageAlt="Empty modern plaza at dawn with a faint cyan grid overlay"
+        tall
       />
 
-      <section className="mx-auto max-w-4xl px-6 pb-24">
-        <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
+      <section className="mx-auto max-w-3xl px-6 py-32 text-lg leading-relaxed text-foreground/85">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Manifesto</p>
+        <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight md:text-5xl">
+          Real humans. Real spaces. Real presence.
+        </h2>
+        <div className="mt-10 space-y-6 text-muted-foreground">
           <p>
-            For a decade, augmented reality has been treated as a private overlay — an app that
-            one person opens, alone, on one device. Each new product rebuilds the same primitives:
-            anchoring, identity, permissions, rendering, collaboration. Nothing carries over.
-            Nothing is shared.
+            Our vision centers on shared experiences and genuine human connection made possible by AR glasses. In a time of increasing digital isolation, this technology should not pull us deeper into screens, but help us engage more fully with the people and places right in front of us.
           </p>
           <p>
-            AR2 was founded on a different premise. Spatial computing only reaches its potential
-            when it is <em>social</em>: when the same hologram sits on the same table for
-            everyone in the room, when a message left in a park is still there tomorrow, when a
-            surgeon and a technician half a world apart share the same view of the same machine.
+            We approach this through the lens of shared experiences, with a strong emphasis on social connectivity. Central to the vision are dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connections.
           </p>
           <p>
-            This requires infrastructure, not another app. It requires recognition, authorization,
-            and display as first-class primitives, provided consistently across devices and
-            operating systems. That is what AR2 is building.
+            These applications enable companies and users to create systems and markets for real humans in real spaces — aligning profit motives with what's good for real humans.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-32">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
-          Guiding Principles
-        </p>
-        <h2 className="mt-4 font-display text-4xl md:text-5xl">Eight commitments.</h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {tenets.map((t) => (
-            <div key={t.t} className="glass rounded-2xl p-6">
-              <t.icon className="size-6 text-[var(--cyan)]" />
-              <h3 className="mt-4 font-display text-xl">{t.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{t.d}</p>
+      <section className="border-t border-border/40">
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-2">
+          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card">
+            <img src={sceneFamily.url} alt="Family with a glowing guardian creature overlay at dusk" loading="lazy" width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
+            <div className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">In Practice</p>
+            <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight">Living Entities as Dynamic Anchors</h3>
+            <p className="mt-4 text-muted-foreground">
+              Imagine a family adventure or group activity where a Wookiee-inspired guardian figure dynamically overlays one participant, intelligently responding to shared movements and actions. Personal expression becomes a shared, engaging experience in the physical world.
+            </p>
             </div>
-          ))}
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card">
+            <img src={sceneStudents.url} alt="Students learning with a holographic 3D model in class" loading="lazy" width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
+            <div className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">In Practice</p>
+            <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight">Virtual Identification & Real-Time Connection</h3>
+            <p className="mt-4 text-muted-foreground">
+              Consent-based overlays of profiles, links, and calendar data directly into the real world. Established social platforms can pivot their users from the empty calories of online spaces into meaningful interactions in real places.
+            </p>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card">
+            <img src={sceneConcert.url} alt="Two friends watching a shared holographic concert" loading="lazy" width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
+            <div className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">In Practice</p>
+            <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight">AR Entertainment</h3>
+            <p className="mt-4 text-muted-foreground">
+              Friends experience concerts, games, and live events in real time, together, anywhere. Multiple users view, hear, and interact with the same anchored content simultaneously.
+            </p>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card">
+            <img src={sceneSignpost.url} alt="A trail signpost with an anchored holographic message" loading="lazy" width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
+            <div className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">In Practice</p>
+            <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight">Persistent Messaging</h3>
+            <p className="mt-4 text-muted-foreground">
+              Embodied messages and performances remain anchored in the physical world for later access — sports highlights on a smart signpost, TED-style talks, live music sessions, adventures among friends, or training content — discovered and enjoyed at specific locations.
+            </p>
+            </div>
+          </div>
         </div>
       </section>
-    </PageShell>
+    </SiteLayout>
   );
 }

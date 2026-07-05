@@ -1,141 +1,188 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageHero, SiteLayout } from "@/components/site-layout";
+import heroContact from "@/assets/hero-contact.jpg.asset.json";
+import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
-import { PageShell, PageHero } from "@/components/site/PageShell";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — AR2" },
-      {
-        name: "description",
-        content:
-          "Contact AR2 — partner and developer inquiries, licensing, media, and general questions.",
-      },
-      { property: "og:title", content: "Contact — AR2" },
-      { property: "og:description", content: "Get in touch with AR2." },
+      { title: "Contact — AR2 Project" },
+      { name: "description", content: "Get in touch with the AR2 Project. Confidential meetings, licensing inquiries, and partnerships." },
+      { property: "og:title", content: "Contact — AR2 Project" },
+      { property: "og:description", content: "Licensing inquiries and partnerships." },
     ],
   }),
-  component: Contact,
+  component: ContactPage,
 });
 
-const kinds = ["Partner", "Developer", "Licensing", "Media", "General"] as const;
-
-function Contact() {
-  const [kind, setKind] = useState<(typeof kinds)[number]>("Partner");
-  const [sent, setSent] = useState(false);
+function ContactPage() {
   return (
-    <PageShell>
+    <SiteLayout>
       <PageHero
         eyebrow="Contact"
-        title={<>Let's <span className="text-gradient">build</span>.</>}
-        subtitle="Tell us how you'd like to engage. Our team reviews every inquiry personally."
+        title={<>Let's talk about <span className="text-primary text-glow">real spaces.</span></>}
+        subtitle="Confidential meetings for licensing, partnerships, and platform integrations."
+        image={heroContact.url}
+        imageAlt="Minimalist reception lobby with soft directional light"
       />
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-32 lg:grid-cols-[1fr_1.2fr]">
-        <div className="space-y-8">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
-              Headquarters
-            </p>
-            <p className="mt-3 font-display text-2xl leading-tight">
-              AR2, Inc.
-              <br />
-              San Francisco · New York · Seattle
-            </p>
-          </div>
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
-              Direct
-            </p>
-            <ul className="mt-3 space-y-1 text-foreground/80">
-              <li>partners@ar2.dev</li>
-              <li>developers@ar2.dev</li>
-              <li>press@ar2.dev</li>
-            </ul>
-          </div>
-          <div className="glass relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,var(--azure),transparent_60%),radial-gradient(circle_at_80%_80%,var(--aurora),transparent_60%)] opacity-70" />
-            <div className="absolute inset-0 [background-image:linear-gradient(oklch(1_0_0/0.06)_1px,transparent_1px),linear-gradient(90deg,oklch(1_0_0/0.06)_1px,transparent_1px)] [background-size:32px_32px]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="glass rounded-full px-4 py-2 font-mono text-xs uppercase tracking-widest">
-                Interactive office
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <form
-          className="glass space-y-6 rounded-3xl p-8"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
-        >
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <div className="grid gap-12 md:grid-cols-2">
           <div>
-            <label className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              Inquiry type
-            </label>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {kinds.map((k) => (
-                <button
-                  key={k}
-                  type="button"
-                  onClick={() => setKind(k)}
-                  className={`rounded-full border px-3 py-1.5 text-xs transition-colors ${
-                    kind === k
-                      ? "border-[var(--cyan)] bg-[color-mix(in_oklab,var(--cyan)_20%,transparent)] text-foreground"
-                      : "border-white/10 bg-white/5 text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {k}
-                </button>
-              ))}
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Direct</p>
+            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">Nicholas Hariton</h2>
+            <p className="mt-1 text-muted-foreground">Founder, The AR2 Project</p>
+
+            <div className="mt-10 space-y-5">
+              <a href="mailto:nickh@AR2project.com" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
+                  <div className="font-medium">nickh@AR2project.com</div>
+                </div>
+              </a>
+              <a href="tel:+12133046607" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Phone</div>
+                  <div className="font-medium">213.304.6607</div>
+                </div>
+              </a>
             </div>
           </div>
-          {[
-            { l: "Name", t: "text", n: "name" },
-            { l: "Company", t: "text", n: "company" },
-            { l: "Email", t: "email", n: "email" },
-          ].map((f) => (
-            <div key={f.n}>
-              <label
-                htmlFor={f.n}
-                className="font-mono text-xs uppercase tracking-widest text-muted-foreground"
-              >
-                {f.l}
-              </label>
-              <input
-                id={f.n}
-                name={f.n}
-                type={f.t}
-                required
-                className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-[var(--cyan)] focus:outline-none"
-                placeholder={f.l}
-              />
-            </div>
-          ))}
-          <div>
-            <label
-              htmlFor="message"
-              className="font-mono text-xs uppercase tracking-widest text-muted-foreground"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={5}
-              required
-              className="mt-2 w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-[var(--cyan)] focus:outline-none"
-              placeholder="Tell us how we can help."
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[0_0_60px_-10px_var(--cyan)] transition-transform hover:scale-[1.01]"
-          >
-            {sent ? "Thanks — we'll be in touch" : "Send inquiry"}
-          </button>
-        </form>
+
+          <ContactForm />
+        </div>
       </section>
-    </PageShell>
+    </SiteLayout>
+  );
+}
+
+function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
+      toast.error("Please fill in name, email, and message.");
+      return;
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmedEmail)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: trimmedName,
+        email: trimmedEmail,
+        organization: organization.trim() || null,
+        message: trimmedMessage,
+      });
+      if (error) throw error;
+      setSent(true);
+      setName("");
+      setEmail("");
+      setOrganization("");
+      setMessage("");
+      toast.success("Message received. We'll be in touch shortly.");
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again or email directly.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (sent) {
+    return (
+      <div className="rounded-2xl border border-border/60 bg-card p-8">
+        <h3 className="font-display text-2xl font-semibold tracking-tight">Thank you.</h3>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Your message has reached the AR2 team. We respond to serious inquiries within two business days.
+        </p>
+        <button
+          onClick={() => setSent(false)}
+          className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-primary hover:text-primary/80"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form className="rounded-2xl border border-border/60 bg-card p-8" onSubmit={onSubmit}>
+      <h3 className="font-display text-2xl font-semibold tracking-tight">Send a message</h3>
+      <p className="mt-2 text-sm text-muted-foreground">We respond to serious inquiries within two business days.</p>
+
+      <div className="mt-6 space-y-4">
+        <div>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Name</label>
+          <input
+            type="text"
+            required
+            maxLength={100}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
+        </div>
+        <div>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Email</label>
+          <input
+            type="email"
+            required
+            maxLength={255}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
+        </div>
+        <div>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Organization</label>
+          <input
+            type="text"
+            maxLength={200}
+            value={organization}
+            onChange={(e) => setOrganization(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
+        </div>
+        <div>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Message</label>
+          <textarea
+            rows={4}
+            required
+            maxLength={5000}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.01] disabled:opacity-60"
+        >
+          {submitting ? "Sending…" : "Send message"}
+        </button>
+      </div>
+    </form>
   );
 }
