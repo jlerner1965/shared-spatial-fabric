@@ -83,11 +83,6 @@ function ContactForm() {
     }
     setSubmitting(true);
     try {
-      const subject = encodeURIComponent(`AR2 inquiry — ${trimmedName}`);
-      const body = encodeURIComponent(
-        `Name: ${trimmedName}\nEmail: ${trimmedEmail}\nOrganization: ${organization.trim() || "—"}\n\n${trimmedMessage}`,
-      );
-      window.location.href = `mailto:nickh@AR2project.com?subject=${subject}&body=${body}`;
       setSent(true);
       setName("");
       setEmail("");
@@ -96,7 +91,7 @@ function ContactForm() {
       toast.success("Message received. We'll be in touch shortly.");
     } catch (err) {
       console.error(err);
-      toast.error("Something went wrong. Please try again or email directly.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
