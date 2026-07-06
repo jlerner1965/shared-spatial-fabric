@@ -85,7 +85,6 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-foreground/80">
               <li>Nicholas Hariton</li>
               <li>Founder</li>
-              <li><a href="mailto:nickh@AR2project.com" className="hover:text-primary">nickh@AR2project.com</a></li>
               <li><a href="tel:+12133046607" className="hover:text-primary">213.304.6607</a></li>
             </ul>
           </div>
