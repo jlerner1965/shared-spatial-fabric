@@ -36,15 +36,6 @@ function ContactPage() {
             <p className="mt-1 text-muted-foreground">Founder, The AR2 Project</p>
 
             <div className="mt-10 space-y-5">
-              <a href="mailto:nickh@AR2project.com" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-                  <div className="font-medium">nickh@AR2project.com</div>
-                </div>
-              </a>
               <a href="tel:+12133046607" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Phone size={20} />
