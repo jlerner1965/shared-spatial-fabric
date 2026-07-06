@@ -85,9 +85,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "AR2 Project — Collaborative AR in the Real World" },
       { property: "og:description", content: "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/630fb998-c23e-4740-87ca-2acb21bf5269/id-preview-d3c85b83--fb1c45e3-6a96-41bc-984d-089cd57da97e.lovable.app-1783243555226.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/630fb998-c23e-4740-87ca-2acb21bf5269/id-preview-d3c85b83--fb1c45e3-6a96-41bc-984d-089cd57da97e.lovable.app-1783243555226.png" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "AR2 Project — Collaborative AR in the Real World" },
+      { name: "twitter:description", content: "Shared, spatially anchored AR experiences that bring people together in real spaces." },
     ],
     links: [
       {
