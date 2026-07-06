@@ -42,11 +42,11 @@ function PrivacyPage() {
           </div>
           <div>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">Your rights</h2>
-            <p className="mt-3">You may request a copy of the personal information we hold about you, correction of inaccuracies, or deletion. Email <a href="mailto:nickh@AR2project.com" className="text-primary hover:underline">nickh@AR2project.com</a> and we will respond within a reasonable period.</p>
+            <p className="mt-3">You may request a copy of the personal information we hold about you, correction of inaccuracies, or deletion. Use the <a href="/contact" className="text-primary hover:underline">contact form</a> and we will respond within a reasonable period.</p>
           </div>
           <div>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">Contact</h2>
-            <p className="mt-3">The AR2 Project — <a href="mailto:nickh@AR2project.com" className="text-primary hover:underline">nickh@AR2project.com</a></p>
+            <p className="mt-3">The AR2 Project — reach us via the <a href="/contact" className="text-primary hover:underline">contact form</a>.</p>
           </div>
         </div>
       </section>
