@@ -279,34 +279,6 @@ function VisionPage() {
         </div>
       </section>
 
-      {/* Founder quote */}
-      <section className="border-t border-border/40">
-        <div className="relative mx-auto max-w-5xl px-6 py-32 text-center">
-          <span
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 font-display text-[220px] leading-none text-primary/20 text-glow md:text-[320px]"
-          >
-            &ldquo;
-          </span>
-          <p className="relative text-xs font-semibold uppercase tracking-[0.3em] text-primary">Founder</p>
-          <blockquote className="relative mt-10 font-display text-3xl font-medium italic leading-[1.15] tracking-tight text-foreground md:text-5xl">
-            Our vision is to align profit motives with{" "}
-            <span className="text-primary text-glow">what's good for real humans.</span>
-          </blockquote>
-          <figcaption className="relative mt-10 flex items-center justify-center gap-4">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-display text-lg text-primary">
-              NH
-            </span>
-            <cite className="not-italic text-left">
-              <div className="text-sm font-semibold">Nicholas T. Hariton</div>
-              <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Founder · The AR2 Project
-              </div>
-            </cite>
-          </figcaption>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="border-t border-border/40">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
