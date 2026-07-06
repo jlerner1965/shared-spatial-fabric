@@ -55,7 +55,7 @@ const SCENES = [
 ];
 
 const STATS = [
-  { k: "34", v: "Granted US Patents" },
+  { k: "34", v: "US Patent Assets" },
   { k: "5", v: "Patent Families" },
   { k: "2018", v: "First Patent Granted" },
   { k: "USC", v: "Faculty Advisors" },
@@ -68,6 +68,12 @@ export const Route = createFileRoute("/vision")({
       { name: "description", content: "Our vision centers on shared experiences and genuine human connection made possible by AR glasses — engaging more fully with the people and places right in front of us." },
       { property: "og:title", content: "Vision — AR2 Project" },
       { property: "og:description", content: "Shared experiences and genuine human connection through AR." },
+      { property: "og:url", content: "https://shared-spatial-fabric.lovable.app/vision" },
+      { name: "twitter:title", content: "Vision — AR2 Project" },
+      { name: "twitter:description", content: "Shared experiences and genuine human connection through AR." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://shared-spatial-fabric.lovable.app/vision" },
     ],
   }),
   component: VisionPage,
