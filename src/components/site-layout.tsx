@@ -59,7 +59,7 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-32 border-t border-border/60 bg-card/60 backdrop-blur-sm">
+    <footer className="mt-32 border-t-2 border-primary/30 bg-card text-foreground shadow-[0_-1px_0_0_oklch(0.82_0.14_210/0.15)]">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -67,33 +67,33 @@ export function SiteFooter() {
               <img src={logo.url} alt="AR² dragon logo" width={28} height={28} />
               <span className="font-display text-lg font-semibold">AR<sup className="text-primary">2</sup> Project</span>
             </div>
-            <p className="mt-4 max-w-sm text-sm text-muted-foreground">
+            <p className="mt-4 max-w-sm text-sm text-foreground/90">
               Empowering collaborative virtual user experiences in the real world.
             </p>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Explore</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/vision" className="text-foreground/80 hover:text-primary">Vision</Link></li>
-              <li><Link to="/technology" className="text-foreground/80 hover:text-primary">Technology</Link></li>
-              <li><Link to="/platform" className="text-foreground/80 hover:text-primary">Platform</Link></li>
-              <li><Link to="/use-cases" className="text-foreground/80 hover:text-primary">Use Cases</Link></li>
+              <li><Link to="/vision" className="text-foreground hover:text-primary">Vision</Link></li>
+              <li><Link to="/technology" className="text-foreground hover:text-primary">Technology</Link></li>
+              <li><Link to="/platform" className="text-foreground hover:text-primary">Platform</Link></li>
+              <li><Link to="/use-cases" className="text-foreground hover:text-primary">Use Cases</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Contact</h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Contact</h4>
+            <ul className="mt-4 space-y-2 text-sm text-foreground">
               <li>Nicholas Hariton</li>
               <li>Founder</li>
               <li><a href="tel:+12133046607" className="hover:text-primary">213.304.6607</a></li>
             </ul>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border/40 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border/60 pt-6 text-xs text-foreground/80 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} The AR2 Project. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <Link to="/privacy" className="hover:text-primary">Privacy</Link>
-            <Link to="/terms" className="hover:text-primary">Terms</Link>
+            <Link to="/privacy" className="text-foreground/90 hover:text-primary">Privacy</Link>
+            <Link to="/terms" className="text-foreground/90 hover:text-primary">Terms</Link>
             <span>Recognition · Authorization · Display</span>
           </div>
         </div>
