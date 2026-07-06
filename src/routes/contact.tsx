@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site-layout";
 import heroContact from "@/assets/hero-contact.jpg.asset.json";
-import { Mail, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
