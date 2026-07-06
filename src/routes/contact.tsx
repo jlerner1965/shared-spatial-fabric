@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site-layout";
 import heroContact from "@/assets/hero-contact.jpg.asset.json";
-import { Mail, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -36,15 +36,6 @@ function ContactPage() {
             <p className="mt-1 text-muted-foreground">Founder, The AR2 Project</p>
 
             <div className="mt-10 space-y-5">
-              <a href="mailto:nickh@AR2project.com" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-                  <div className="font-medium">nickh@AR2project.com</div>
-                </div>
-              </a>
               <a href="tel:+12133046607" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Phone size={20} />
@@ -92,11 +83,6 @@ function ContactForm() {
     }
     setSubmitting(true);
     try {
-      const subject = encodeURIComponent(`AR2 inquiry — ${trimmedName}`);
-      const body = encodeURIComponent(
-        `Name: ${trimmedName}\nEmail: ${trimmedEmail}\nOrganization: ${organization.trim() || "—"}\n\n${trimmedMessage}`,
-      );
-      window.location.href = `mailto:nickh@AR2project.com?subject=${subject}&body=${body}`;
       setSent(true);
       setName("");
       setEmail("");
@@ -105,7 +91,7 @@ function ContactForm() {
       toast.success("Message received. We'll be in touch shortly.");
     } catch (err) {
       console.error(err);
-      toast.error("Something went wrong. Please try again or email directly.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }

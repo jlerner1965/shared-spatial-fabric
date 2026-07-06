@@ -43,8 +43,6 @@ function AboutPage() {
           <h3 className="mt-3 font-display text-2xl font-semibold">Nicholas Hariton</h3>
           <p className="mt-2 text-sm text-muted-foreground">Founder, The AR2 Project</p>
           <p className="mt-4 text-sm text-muted-foreground">
-            <a href="mailto:nickh@AR2project.com" className="text-primary hover:underline">nickh@AR2project.com</a>
-            <span className="mx-2">·</span>
             <a href="tel:+12133046607" className="hover:text-foreground">213.304.6607</a>
           </p>
         </div>

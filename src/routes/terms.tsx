@@ -46,7 +46,7 @@ function TermsPage() {
           </div>
           <div>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">Contact</h2>
-            <p className="mt-3">Questions about these terms: <a href="mailto:nickh@AR2project.com" className="text-primary hover:underline">nickh@AR2project.com</a></p>
+            <p className="mt-3">Questions about these terms: use the <a href="/contact" className="text-primary hover:underline">contact form</a>.</p>
           </div>
         </div>
       </section>
