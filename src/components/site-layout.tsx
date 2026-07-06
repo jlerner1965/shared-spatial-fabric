@@ -59,7 +59,7 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-32 border-t border-border/40">
+    <footer className="mt-32 border-t border-border/60 bg-card/60 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
