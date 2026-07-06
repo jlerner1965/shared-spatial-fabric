@@ -152,10 +152,10 @@ function VisionPage() {
             Our vision centers on shared experiences and genuine human connection made possible by AR glasses. In a time of increasing digital isolation, this technology should not pull us deeper into screens, but help us engage more fully with the people and places right in front of us.
           </p>
           <p>
-            We approach this through the lens of shared experiences, with a strong emphasis on social connectivity. Central to the vision are dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connections.
+            The through-line is social connectivity: dynamic, spatially anchored tools that enhance collaboration, personalization, and the moments people already share in the physical world.
           </p>
           <p>
-            These applications enable companies and users to create systems and markets for real humans in real spaces — aligning profit motives with what's good for real humans.
+            The goal is an ecosystem where companies, developers, and users can build durable markets around real presence — one that rewards creators, respects consent, and stays honest about who benefits.
           </p>
         </div>
       </section>
@@ -170,13 +170,13 @@ function VisionPage() {
             </h2>
             <div className="mt-8 space-y-5 text-muted-foreground">
               <p>
-                We approach AR through the lens of shared experiences, with a strong emphasis on social connectivity. Central to the vision are dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connections.
+                Today's AR pulls a single user into a private feed layered over the world. AR² inverts that: many people, one shared scene, anchored to the place they're actually standing in.
               </p>
               <p>
-                For established social media platforms, Virtual Identification lets users pivot from the empty calories of online spaces into meaningful interactions in the real world. AR Entertainment lets friends experience concerts, games, or live events together — anywhere. Persistent Messaging lets embodied performances remain anchored to physical places for later discovery.
+                Virtual Identification lets social platforms extend their graph into physical venues without dragging users back to a screen. AR Entertainment lets friends watch, hear, and react to the same anchored content at the same time. Persistent Messaging leaves embodied moments behind for others to discover on location.
               </p>
               <p>
-                These applications enable companies and users to create systems and markets for real humans in real spaces.
+                Each pattern rests on the same substrate of Recognition, Authorization, and Display — the primitives that let shared spatial content stay coherent across users, devices, and time.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-widest">
