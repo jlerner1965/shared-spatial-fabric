@@ -15,7 +15,16 @@ import sceneStudents from "@/assets/scene-students.jpg.asset.json";
 import visionFamily from "@/assets/vision-family.jpg.asset.json";
 import visionMma from "@/assets/vision-mma.jpg.asset.json";
 import visionConcert from "@/assets/vision-concert.jpg.asset.json";
-import { ArrowRight, Sparkles, Eye, ShieldCheck, Layers } from "lucide-react";
+import teamNick from "@/assets/team-nick.png.asset.json";
+import teamPerry from "@/assets/team-perry.png.asset.json";
+import teamDmitri from "@/assets/team-dmitri.png.asset.json";
+import teamAnthony from "@/assets/team-anthony.png.asset.json";
+import teamCynthia from "@/assets/team-cynthia.png.asset.json";
+import teamMark from "@/assets/team-mark.png.asset.json";
+import teamBen from "@/assets/team-ben.png.asset.json";
+import teamIan from "@/assets/team-ian.png.asset.json";
+import { ContactForm } from "@/components/contact-form";
+import { Sparkles, Eye, ShieldCheck, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,17 +81,16 @@ const USE_CASES = [
 ];
 
 const TEAM_LEAD = [
-  { name: "Nick Hariton", role: "Chief Executive Officer" },
-  { name: "Perry Lerner", role: "Chair" },
-  { name: "Prof. Dmitri Williams", role: "Chief Science Officer" },
-  { name: "Prof. Anthony Borquez", role: "Development Partner" },
+  { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url },
+  { name: "Perry Lerner", role: "Chair", photo: teamPerry.url },
+  { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url },
+  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamAnthony.url },
 ];
 const TEAM_ADVISORS = [
-  { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor" },
-  { name: "Mark Guilarte", role: "Strategic Advisor" },
-  { name: "Prof. Ben Lee", role: "Strategic Advisor" },
-  { name: "Jan van Merkensteijn", role: "Strategic Advisor" },
-  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor" },
+  { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url },
+  { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url },
+  { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url },
+  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url },
 ];
 
 const PATENT_FAMILIES: Array<[string, string, string, string]> = [
@@ -121,16 +129,8 @@ function Index() {
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
             AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]">
-              Book a licensing conversation <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <a href="#technology" className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-6 py-3 text-sm font-medium backdrop-blur hover:border-primary/40 hover:text-primary">
-              How it works
-            </a>
-          </div>
           {/* Trust bar */}
-          <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
+          <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
             {[
               { k: "34", v: "Granted US Patents" },
               { k: "5", v: "Patent Families" },
@@ -309,27 +309,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Principles */}
-      <section className="mx-auto max-w-7xl px-6 py-32">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Principles</p>
-        <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          An AR ecosystem aligned with what's good for real humans.
-        </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Brings people together in person",
-            "Empowers developers and fairly rewards creators",
-            "Protects content creators and IP holders",
-            "Maximizes openness, with strong parental tools",
-          ].map((p, i) => (
-            <div key={p} className="border-t border-primary/40 pt-6">
-              <div className="font-mono text-xs text-primary">0{i + 1}</div>
-              <p className="mt-3 font-display text-lg leading-snug">{p}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Team */}
       <section id="team" className="scroll-mt-24 border-t border-border/40 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-32">
@@ -344,18 +323,20 @@ function Index() {
           <p className="mt-14 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">Leadership</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_LEAD.map((p) => (
-              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5">
-                <div className="font-display text-lg font-semibold tracking-tight">{p.name}</div>
+              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
+                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-28 rounded-full border border-primary/30 object-cover" />
+                <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
             ))}
           </div>
 
           <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">Strategic advisors</p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_ADVISORS.map((p) => (
-              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5">
-                <div className="font-display text-base font-semibold tracking-tight">{p.name}</div>
+              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
+                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-24 rounded-full border border-primary/30 object-cover" />
+                <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
             ))}
@@ -407,17 +388,30 @@ function Index() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="mx-auto max-w-4xl px-6 py-32 text-center">
-        <h2 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          Let's build the spatial layer <span className="text-primary text-glow">together.</span>
-        </h2>
-        <p className="mt-6 text-muted-foreground">
-          Licensing, partnerships, investment, developer collaboration, or press — we'll route your note to the right person on the team.
-        </p>
-        <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]">
-          Get in touch <ArrowRight size={16} />
-        </Link>
+      {/* Contact */}
+      <section id="contact" className="relative isolate scroll-mt-24 overflow-hidden border-t border-border/40">
+        <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 -z-10 bg-grid opacity-20" />
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-32 md:grid-cols-2 md:gap-12">
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              <span className="h-px w-8 bg-primary" />
+              Get in touch
+            </div>
+            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl">
+              Let's build the spatial layer <span className="text-primary text-glow">together.</span>
+            </h2>
+            <p className="mt-6 max-w-lg text-lg text-muted-foreground">
+              For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
+                <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <ContactForm />
+        </div>
       </section>
     </SiteLayout>
   );
