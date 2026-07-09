@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AR2 — Shared AR, anchored to the real world" },
-      { name: "description", content: "AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers build multi-user AR anchored to real people, places, and pets. 34 issued US patents." },
+      { name: "description", content: "AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents." },
       { property: "og:title", content: "AR2 — Shared AR, anchored to the real world" },
       { property: "og:description", content: "Recognition · Authorization · Display. The spatial computing layer for multi-user augmented reality." },
     ],
@@ -151,7 +151,7 @@ function Index() {
             Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
           </h2>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 issued US patents.
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
           </p>
         </div>
       </section>
@@ -209,7 +209,7 @@ function Index() {
             ))}
           </div>
           <p className="mt-12 max-w-3xl text-sm text-muted-foreground">
-            Built for multi-user AR anchored to real people, places, and pets — one integration, every supported runtime.
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 US patents.
           </p>
         </div>
       </section>
