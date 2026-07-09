@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import heroHome from "@/assets/hero-home.jpg.asset.json";
 import pillarLiving from "@/assets/pillar-living.jpg.asset.json";
