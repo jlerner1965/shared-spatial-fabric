@@ -170,6 +170,24 @@ function Index() {
       </section>
 
       {/* Technology / SDK */}
+      {/* Anchor statement */}
+      <section className="relative isolate overflow-hidden border-y border-border/40">
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, oklch(0.28 0.09 220 / 0.5), transparent 60%), linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.16 0.03 240) 100%)" }} />
+        <div className="absolute inset-0 bg-grid opacity-15" />
+        <div className="relative mx-auto max-w-6xl px-6 py-32">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_oklch(0.82_0.14_210)]" />
+            Recognition · Authorization · Display
+          </div>
+          <h2 className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
+          </h2>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
+          </p>
+        </div>
+      </section>
+
       <section id="technology" className="relative scroll-mt-24 border-y border-border/40 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-32">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">The AR2 SDK</p>
