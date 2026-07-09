@@ -57,8 +57,8 @@ export function SiteFooter() {
   return (
     <footer className="mt-32 border-t-2 border-primary/30 bg-card text-foreground shadow-[0_-1px_0_0_oklch(0.82_0.14_210/0.15)]">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-2">
+        <div className="grid gap-12 md:grid-cols-1">
+          <div>
             <div className="flex items-center gap-2.5">
               <img src={logo.url} alt="AR² dragon logo" width={28} height={28} />
               <span className="font-display text-lg font-semibold">AR<sup className="text-primary">2</sup> Project</span>
@@ -66,25 +66,6 @@ export function SiteFooter() {
             <p className="mt-4 max-w-sm text-sm text-foreground/90">
               Empowering collaborative virtual user experiences in the real world.
             </p>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Explore</h4>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="/#vision" className="text-foreground hover:text-primary">Vision</a></li>
-              <li><a href="/#technology" className="text-foreground hover:text-primary">Technology</a></li>
-              <li><a href="/#use-cases" className="text-foreground hover:text-primary">Use Cases</a></li>
-              <li><a href="/#platform" className="text-foreground hover:text-primary">Platform</a></li>
-              <li><a href="/#team" className="text-foreground hover:text-primary">Team</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Contact</h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground">
-              <li>Nicholas Hariton</li>
-              <li>Founder & CEO</li>
-              <li><a href="tel:+12133046607" className="hover:text-primary">213.304.6607</a></li>
-              <li><Link to="/contact" className="text-primary hover:text-primary/80">Send inquiry →</Link></li>
-            </ul>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border/60 pt-6 text-xs text-foreground/80 md:flex-row md:items-center">
