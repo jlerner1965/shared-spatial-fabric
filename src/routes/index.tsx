@@ -6,12 +6,6 @@ import pillarIdentity from "@/assets/pillar-identity.jpg.asset.json";
 import pillarEntertainment from "@/assets/pillar-entertainment.jpg.asset.json";
 import pillarMessaging from "@/assets/pillar-messaging.jpg.asset.json";
 import solution from "@/assets/solution.jpg.asset.json";
-import deckSkinsPeople from "@/assets/deck-virtual-skins-people.jpg.asset.json";
-import deckSkinsPets from "@/assets/deck-virtual-skins-pets.jpg.asset.json";
-import deckConcerts from "@/assets/deck-concerts.jpg.asset.json";
-import deckSports from "@/assets/deck-live-sports.jpg.asset.json";
-import deckAugId from "@/assets/deck-augmented-id.jpg.asset.json";
-import sceneStudents from "@/assets/scene-students.jpg.asset.json";
 import visionFamily from "@/assets/vision-family.jpg.asset.json";
 import visionMma from "@/assets/vision-mma.jpg.asset.json";
 import visionConcert from "@/assets/vision-concert.jpg.asset.json";
@@ -72,12 +66,12 @@ const PRIMITIVES = [
 ];
 
 const USE_CASES = [
-  { tag: "Identity", title: "Virtual ID", desc: "A persistent digital identity anchored to you or your pet. Leave a virtual calling card that follows you into any shared session and unlocks personalized, permissioned content.", image: deckAugId.url },
-  { tag: "Expression", title: "Virtual skins: people", desc: "Dynamic outfits, avatars, and effects seen through AR glasses — always governed by consent and subscriptions, so you stay in control.", image: deckSkinsPeople.url },
-  { tag: "Expression", title: "Virtual skins: pets", desc: "Dress your pet in holographic outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive.", image: deckSkinsPets.url },
-  { tag: "Play", title: "Group games & sports", desc: "Tabletop tournaments and sports sims where everyone sees the same board anchored to the real world — a miniature stadium on your coffee table.", image: deckSports.url },
-  { tag: "Live", title: "Live performances", desc: "Artists appear as holographic performers, synchronized for every viewer, turning any surface into a stage.", image: deckConcerts.url },
-  { tag: "Learn", title: "Shared storytelling", desc: "Collaborative stories and lessons where holographic characters and scenery appear around you — built for education, training, and play.", image: sceneStudents.url },
+  { tag: "Identity", title: "Virtual ID", desc: "A persistent digital identity anchored to you or your pet. Leave a virtual calling card that follows you into any shared session and unlocks personalized, permissioned content." },
+  { tag: "Expression", title: "Virtual skins: people", desc: "Dynamic outfits, avatars, and effects seen through AR glasses — always governed by consent and subscriptions, so you stay in control." },
+  { tag: "Expression", title: "Virtual skins: pets", desc: "Dress your pet in holographic outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive." },
+  { tag: "Play", title: "Group games & sports", desc: "Tabletop tournaments and sports sims where everyone sees the same board anchored to the real world — a miniature stadium on your coffee table." },
+  { tag: "Live", title: "Live performances", desc: "Artists appear as holographic performers, synchronized for every viewer, turning any surface into a stage." },
+  { tag: "Learn", title: "Shared storytelling", desc: "Collaborative stories and lessons where holographic characters and scenery appear around you — built for education, training, and play." },
 ];
 
 const TEAM_LEAD = [
@@ -91,24 +85,6 @@ const TEAM_ADVISORS = [
   { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url },
   { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url },
   { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url },
-];
-
-const PATENT_FAMILIES: Array<[string, string, string, string]> = [
-  ["Personalized Rendering", "Systems and Methods for Generating and Facilitating Access to a Personalized Augmented Rendering of a User", "2019-02-05", "US 10,198,871"],
-  ["Constructed Objects", "Systems and Methods for Rendering a Virtual Content Object in an Augmented Reality Environment", "2018-10-23", "US 10,105,601 B1"],
-  ["Smart Sign Post", "Systems and Methods for Utilizing a Device as a Marker for Augmented Reality Content", "2018-10-16", "US 10,102,659 B1"],
-  ["Living Entity as Marker", "Systems and Methods for Utilizing a Living Entity as a Marker for Augmented Reality Content", "2020-04-28", "US 10,636,188"],
-  ["AR Messengering", "Systems, Methods, and Storage Media for Conveying Virtual Content in an Augmented Reality Environment", "2020-03-10", "US 10,586,396 B1"],
-];
-
-const ALL_PATENTS = [
-  "10,102,659","10,105,601","10,198,871","10,565,767","10,586,396",
-  "10,593,121","10,636,188","10,661,170","10,672,170","10,679,427",
-  "10,796,467","10,818,096","10,846,931","10,861,245","10,867,424",
-  "11,120,596","11,145,136","11,185,775","11,198,064","11,200,748",
-  "11,532,134","11,620,798","11,631,223","11,752,431","11,810,226",
-  "11,823,312","11,850,511","11,983,830","12,026,806","12,086,944",
-  "12,106,411","12,296,264","12,350,586","12,406,453",
 ];
 
 function Index() {
