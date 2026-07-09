@@ -209,7 +209,7 @@ function Index() {
             ))}
           </div>
           <p className="mt-12 max-w-3xl text-sm text-muted-foreground">
-            Built for multi-user AR anchored to real people, places, and pets — one integration, every supported runtime.
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 US patents.
           </p>
         </div>
       </section>
