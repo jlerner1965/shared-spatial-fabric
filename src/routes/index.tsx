@@ -18,7 +18,7 @@ import teamMark from "@/assets/team-mark.png.asset.json";
 import teamBen from "@/assets/team-ben.png.asset.json";
 import teamIan from "@/assets/team-ian.png.asset.json";
 import { ContactForm } from "@/components/contact-form";
-import { Sparkles, Eye, ShieldCheck, Layers } from "lucide-react";
+import { Eye, ShieldCheck, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
