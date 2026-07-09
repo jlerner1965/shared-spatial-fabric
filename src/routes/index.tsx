@@ -12,6 +12,9 @@ import deckConcerts from "@/assets/deck-concerts.jpg.asset.json";
 import deckSports from "@/assets/deck-live-sports.jpg.asset.json";
 import deckAugId from "@/assets/deck-augmented-id.jpg.asset.json";
 import sceneStudents from "@/assets/scene-students.jpg.asset.json";
+import visionFamily from "@/assets/vision-family.jpg.asset.json";
+import visionMma from "@/assets/vision-mma.jpg.asset.json";
+import visionConcert from "@/assets/vision-concert.jpg.asset.json";
 import { ArrowRight, Sparkles, Eye, ShieldCheck, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -154,13 +157,18 @@ function Index() {
         </p>
         <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
           {[
-            { t: "Generational connection", d: "Anchored experiences that bring families and communities into the same shared moment, in the same physical place." },
-            { t: "Live performances", d: "Concerts, sports, and events where every viewer sees the same synchronized performer in their space." },
-            { t: "Responsive entertainment", d: "Games and stories that react to real people, pets, and rooms — governed by consent at every layer." },
+            { t: "Generational connection", d: "Anchored experiences that bring families and communities into the same shared moment, in the same physical place.", img: visionFamily.url, alt: "Grandparents sharing a moment with a holographic granddaughter singing" },
+            { t: "Live performances", d: "Concerts, sports, and events where every viewer sees the same synchronized performer in their space.", img: visionMma.url, alt: "Friends wearing AR glasses watching a shared holographic MMA match on a coffee table" },
+            { t: "Responsive entertainment", d: "Games and stories that react to real people, pets, and rooms — governed by consent at every layer.", img: visionConcert.url, alt: "Group watching a holographic rock band perform on their coffee table with AR flames" },
           ].map((v) => (
-            <div key={v.t} className="rounded-2xl border border-border/60 bg-card p-6">
-              <h3 className="font-display text-lg font-semibold">{v.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{v.d}</p>
+            <div key={v.t} className="overflow-hidden rounded-2xl border border-border/60 bg-card">
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img src={v.img} alt={v.alt} className="h-full w-full object-cover" loading="lazy" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-lg font-semibold">{v.t}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{v.d}</p>
+              </div>
             </div>
           ))}
         </div>

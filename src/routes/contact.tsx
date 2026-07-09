@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, SiteLayout } from "@/components/site-layout";
-import heroContact from "@/assets/hero-contact.jpg.asset.json";
-import { Phone } from "lucide-react";
+import { SiteLayout } from "@/components/site-layout";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -20,40 +18,27 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <SiteLayout>
-      <PageHero
-        eyebrow="Get in touch"
-        title={<>Let's build the spatial layer <span className="text-primary text-glow">together.</span></>}
-        subtitle="For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team."
-        image={heroContact.url}
-        imageAlt="Minimalist reception lobby with soft directional light"
-      />
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-12 md:grid-cols-2">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Inquiries we handle</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">Licensing · Partnerships · Investment</h2>
-            <p className="mt-3 text-muted-foreground">Developer collaboration, enterprise engagements, and media requests are also welcome. We respond to serious inquiries within two business days.</p>
-
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 -z-10 bg-grid opacity-20" />
+        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-32 md:grid-cols-2 md:gap-12">
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              <span className="h-px w-8 bg-primary" />
+              Get in touch
+            </div>
+            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl">
+              Let's build the spatial layer <span className="text-primary text-glow">together.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-lg text-muted-foreground">
+              For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
+            </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
                 <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
               ))}
             </div>
-
-            <div className="mt-10">
-              <a href="tel:+12133046607" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Phone</div>
-                  <div className="font-medium">213.304.6607</div>
-                </div>
-              </a>
-            </div>
           </div>
-
           <ContactForm />
         </div>
       </section>
