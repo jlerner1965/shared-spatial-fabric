@@ -5,11 +5,7 @@ import { Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
-  { to: "/vision", label: "Vision" },
-  { to: "/technology", label: "Technology" },
-  { to: "/platform", label: "Platform" },
-  { to: "/use-cases", label: "Use Cases" },
-  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
@@ -24,7 +20,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
-          {NAV.slice(1).map((n) => (
+          {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
@@ -35,7 +31,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link to="/contact" className="ml-4 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[var(--shadow-glow)]">
-            Get in touch
+            Send inquiry
           </Link>
         </nav>
         <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -74,18 +70,20 @@ export function SiteFooter() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/vision" className="text-foreground hover:text-primary">Vision</Link></li>
-              <li><Link to="/technology" className="text-foreground hover:text-primary">Technology</Link></li>
-              <li><Link to="/platform" className="text-foreground hover:text-primary">Platform</Link></li>
-              <li><Link to="/use-cases" className="text-foreground hover:text-primary">Use Cases</Link></li>
+              <li><a href="/#vision" className="text-foreground hover:text-primary">Vision</a></li>
+              <li><a href="/#technology" className="text-foreground hover:text-primary">Technology</a></li>
+              <li><a href="/#use-cases" className="text-foreground hover:text-primary">Use Cases</a></li>
+              <li><a href="/#platform" className="text-foreground hover:text-primary">Platform</a></li>
+              <li><a href="/#team" className="text-foreground hover:text-primary">Team</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary">Contact</h4>
             <ul className="mt-4 space-y-2 text-sm text-foreground">
               <li>Nicholas Hariton</li>
-              <li>Founder</li>
+              <li>Founder & CEO</li>
               <li><a href="tel:+12133046607" className="hover:text-primary">213.304.6607</a></li>
+              <li><Link to="/contact" className="text-primary hover:text-primary/80">Send inquiry →</Link></li>
             </ul>
           </div>
         </div>
