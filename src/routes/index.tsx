@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AR2 — Shared AR, anchored to the real world" },
-      { name: "description", content: "AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers build multi-user AR anchored to real people, places, and pets. 34 granted US patents." },
+      { name: "description", content: "AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers build multi-user AR anchored to real people, places, and pets. 34 issued US patents." },
       { property: "og:title", content: "AR2 — Shared AR, anchored to the real world" },
       { property: "og:description", content: "Recognition · Authorization · Display. The spatial computing layer for multi-user augmented reality." },
     ],
@@ -96,9 +96,6 @@ function Index() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.55) 0%, oklch(0.14 0.02 240 / 0.6) 40%, oklch(0.14 0.02 240) 100%)" }} />
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative mx-auto flex min-h-[96vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40">
-          <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_oklch(0.82_0.14_210)]" /> Our Vision
-          </div>
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
             A quiet possibility, <span className="text-primary text-glow">shared out loud.</span>
           </h1>
@@ -108,10 +105,10 @@ function Index() {
           {/* Trust bar */}
           <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
             {[
-              { k: "34", v: "Granted US Patents" },
+              { k: "34", v: "Issued US Patents" },
               { k: "5", v: "Patent Families" },
               { k: "3", v: "Primitives (R·A·D)" },
-              { k: "2018", v: "First Patent Granted" },
+              { k: "2018", v: "First Patent Issued" },
             ].map((s) => (
               <div key={s.v}>
                 <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{s.k}</dt>
@@ -154,7 +151,7 @@ function Index() {
             Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
           </h2>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
+            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 issued US patents.
           </p>
         </div>
       </section>
@@ -325,7 +322,7 @@ function Index() {
             Meet the team.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            A team of inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists behind an augmented-reality platform built on the RAD method and 34 granted U.S. patents.
+            A team of inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists behind an augmented-reality platform built on the RAD method and 34 issued U.S. patents.
           </p>
 
           <p className="mt-14 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">Leadership</p>
