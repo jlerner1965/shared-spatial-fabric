@@ -97,13 +97,13 @@ function Index() {
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative mx-auto flex min-h-[96vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40">
           <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-primary">
-            <Sparkles size={12} /> Recognition · Authorization · Display
+            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_oklch(0.82_0.14_210)]" /> Our Vision
           </div>
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
-            Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
+            A quiet possibility, <span className="text-primary text-glow">shared out loud.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            AR2 licenses the core primitives — Recognition, Authorization, and Display — that let developers and platforms build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.
+            AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us.
           </p>
           {/* Trust bar */}
           <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
