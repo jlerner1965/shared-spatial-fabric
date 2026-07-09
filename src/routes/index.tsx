@@ -122,6 +122,25 @@ function Index() {
         </div>
       </section>
 
+      {/* Manifesto */}
+      <section className="mx-auto max-w-4xl px-6 py-32">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Manifesto</p>
+        <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+          Real humans. Real spaces. <span className="text-primary text-glow">Real presence.</span>
+        </h2>
+        <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Our vision centers on shared experiences and genuine human connection made possible by AR glasses. In a time of increasing digital isolation, this technology should not pull us deeper into screens, but help us engage more fully with the people and places right in front of us.
+          </p>
+          <p>
+            We approach this through the lens of shared experiences, with a strong emphasis on social connectivity. Central to the vision are dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connections.
+          </p>
+          <p>
+            These applications enable companies and users to create systems and markets for real humans in real spaces — aligning profit motives with what's good for real humans.
+          </p>
+        </div>
+      </section>
+
       {/* Vision */}
       <section id="vision" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-32 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Vision</p>
