@@ -315,50 +315,6 @@ function Index() {
         </div>
       </section>
 
-      {/* IP */}
-      <section id="ip" className="scroll-mt-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6 py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Intellectual Property</p>
-          <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
-            34 granted U.S. patents. Five foundational families.
-          </h2>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            A patent portfolio covering the primitives of shared augmented reality — personalized rendering, living-entity anchors, constructed objects, smart sign posts, and AR messengering. First patent granted 2018.
-          </p>
-
-          <div className="mt-10 overflow-x-auto rounded-2xl border border-border/60">
-            <table className="w-full min-w-[720px] text-left text-sm">
-              <thead className="bg-primary/10 text-primary">
-                <tr>
-                  <th className="px-5 py-3 font-medium">Family</th>
-                  <th className="px-5 py-3 font-medium">Core Patent</th>
-                  <th className="px-5 py-3 font-medium">Issue Date</th>
-                  <th className="px-5 py-3 font-medium">Patent ID</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border/60">
-                {PATENT_FAMILIES.map(([family, patent, date, id]) => (
-                  <tr key={id} className="bg-card">
-                    <td className="px-5 py-4 font-display font-semibold">{family}</td>
-                    <td className="px-5 py-4 text-muted-foreground">{patent}</td>
-                    <td className="px-5 py-4 font-mono text-xs text-foreground/80">{date}</td>
-                    <td className="px-5 py-4 font-mono text-xs text-primary">{id}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-8 grid gap-1.5 rounded-2xl border border-border/60 bg-card p-4 font-mono text-xs sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {ALL_PATENTS.map((n) => (
-              <div key={n} className="rounded-md bg-background/60 px-3 py-2 text-foreground/80">
-                <span className="text-muted-foreground">U.S.</span> {n}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="relative isolate scroll-mt-24 overflow-hidden border-t border-border/40">
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
