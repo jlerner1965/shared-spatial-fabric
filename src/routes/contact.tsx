@@ -21,9 +21,9 @@ function ContactPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contact"
-        title={<>Let's talk about <span className="text-primary text-glow">real spaces.</span></>}
-        subtitle="Confidential meetings for licensing, partnerships, and platform integrations."
+        eyebrow="Get in touch"
+        title={<>Let's build the spatial layer <span className="text-primary text-glow">together.</span></>}
+        subtitle="For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team."
         image={heroContact.url}
         imageAlt="Minimalist reception lobby with soft directional light"
       />
@@ -31,11 +31,17 @@ function ContactPage() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 md:grid-cols-2">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Direct</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">Nicholas Hariton</h2>
-            <p className="mt-1 text-muted-foreground">Founder, The AR2 Project</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Inquiries we handle</p>
+            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">Licensing · Partnerships · Investment</h2>
+            <p className="mt-3 text-muted-foreground">Developer collaboration, enterprise engagements, and media requests are also welcome. We respond to serious inquiries within two business days.</p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
+                <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
+              ))}
+            </div>
+
+            <div className="mt-10">
               <a href="tel:+12133046607" className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-primary/50">
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Phone size={20} />
@@ -59,6 +65,9 @@ function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [organization, setOrganization] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [phone, setPhone] = useState("");
+  const [inquiryType, setInquiryType] = useState("Licensing");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [submitting, setSubmitting] = useState(false);
@@ -87,6 +96,9 @@ function ContactForm() {
       setName("");
       setEmail("");
       setOrganization("");
+      setJobTitle("");
+      setPhone("");
+      setInquiryType("Licensing");
       setMessage("");
       toast.success("Message received. We'll be in touch shortly.");
     } catch (err) {
@@ -116,7 +128,7 @@ function ContactForm() {
 
   return (
     <form className="rounded-2xl border border-border/60 bg-card p-8" onSubmit={onSubmit}>
-      <h3 className="font-display text-2xl font-semibold tracking-tight">Send a message</h3>
+      <h3 className="font-display text-2xl font-semibold tracking-tight">Send inquiry</h3>
       <p className="mt-2 text-sm text-muted-foreground">We respond to serious inquiries within two business days.</p>
 
       <div className="mt-6 space-y-4">
@@ -124,7 +136,7 @@ function ContactForm() {
           <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} /></label>
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Name</label>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Full name</label>
           <input
             type="text"
             required
@@ -145,15 +157,49 @@ function ContactForm() {
             className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
           />
         </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Company</label>
+            <input
+              type="text"
+              maxLength={200}
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Job title</label>
+            <input
+              type="text"
+              maxLength={200}
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
+              className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+            />
+          </div>
+        </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Organization</label>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Phone (optional)</label>
           <input
-            type="text"
-            maxLength={200}
-            value={organization}
-            onChange={(e) => setOrganization(e.target.value)}
+            type="tel"
+            maxLength={40}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
           />
+        </div>
+        <div>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Inquiry type</label>
+          <select
+            value={inquiryType}
+            onChange={(e) => setInquiryType(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          >
+            {["Licensing", "Strategic partnership", "Developer collaboration", "Investor inquiry", "Enterprise", "Media", "General inquiry"].map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
         </div>
         <div>
           <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Message</label>
@@ -174,7 +220,7 @@ function ContactForm() {
           disabled={submitting}
           className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.01] disabled:opacity-60"
         >
-          {submitting ? "Sending…" : "Send message"}
+          {submitting ? "Sending…" : "Send inquiry"}
         </button>
       </div>
     </form>
