@@ -3,7 +3,6 @@ import { SiteLayout } from "@/components/site-layout";
 import heroHome from "@/assets/hero-home.jpg.asset.json";
 import pillarLiving from "@/assets/pillar-living.jpg.asset.json";
 import pillarIdentity from "@/assets/pillar-identity.jpg.asset.json";
-import pillarEntertainment from "@/assets/pillar-entertainment.jpg.asset.json";
 import pillarMessaging from "@/assets/pillar-messaging.jpg.asset.json";
 import solution from "@/assets/solution.jpg.asset.json";
 import visionFamily from "@/assets/vision-family.jpg.asset.json";
@@ -49,7 +48,7 @@ const PILLARS = [
     tag: "03",
     title: "AR Entertainment",
     desc: "Friends experience concerts, games, and live events together, anywhere. Multiple users view, hear, and interact with the same anchored content simultaneously.",
-    image: pillarEntertainment.url,
+    image: visionConcert.url,
   },
   {
     tag: "04",
@@ -165,11 +164,10 @@ function Index() {
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
           In a time of increasing digital isolation, AR should not pull us deeper into screens — it should help us engage more fully with the people and places right in front of us. AR2 is the spatial computing layer for multi-user augmented reality: shared sessions, anchored identity, and content that lives in the real world.
         </p>
-        <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
+        <div className="mt-16 grid gap-6 text-left md:grid-cols-2">
           {[
             { t: "Generational connection", d: "Anchored experiences that bring families and communities into the same shared moment, in the same physical place.", img: visionFamily.url, alt: "Grandparents sharing a moment with a holographic granddaughter singing" },
             { t: "Live performances", d: "Concerts, sports, and events where every viewer sees the same synchronized performer in their space.", img: visionMma.url, alt: "Friends wearing AR glasses watching a shared holographic MMA match on a coffee table" },
-            { t: "Responsive entertainment", d: "Games and stories that react to real people, pets, and rooms — governed by consent at every layer.", img: visionConcert.url, alt: "Group watching a holographic rock band perform on their coffee table with AR flames" },
           ].map((v) => (
             <div key={v.t} className="overflow-hidden rounded-2xl border border-border/60 bg-card">
               <div className="aspect-[4/3] w-full overflow-hidden">
