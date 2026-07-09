@@ -220,17 +220,12 @@ function Index() {
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {USE_CASES.map((u) => (
-              <article key={u.title} className="group overflow-hidden rounded-2xl border border-border/60 bg-background/60 transition-all hover:border-primary/50">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img src={u.image} alt={u.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute left-4 top-4 rounded-full border border-primary/40 bg-background/70 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-widest text-primary backdrop-blur">
-                    {u.tag}
-                  </div>
+              <article key={u.title} className="group rounded-2xl border border-border/60 bg-background/60 p-7 transition-all hover:border-primary/50">
+                <div className="inline-flex rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-widest text-primary">
+                  {u.tag}
                 </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold tracking-tight">{u.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
-                </div>
+                <h3 className="mt-5 font-display text-xl font-semibold tracking-tight">{u.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
               </article>
             ))}
           </div>
