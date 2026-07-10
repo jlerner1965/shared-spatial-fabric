@@ -11,11 +11,11 @@ import visionConcert from "@/assets/vision-concert.jpg.asset.json";
 import teamNick from "@/assets/team-nick.png.asset.json";
 import teamPerry from "@/assets/team-perry.png.asset.json";
 import teamDmitri from "@/assets/team-dmitri.png.asset.json";
-import teamAnthony from "@/assets/team-anthony.png.asset.json";
+import teamAnthony from "@/assets/team-anthony-v2.png.asset.json";
 import teamCynthia from "@/assets/team-cynthia.png.asset.json";
 import teamMark from "@/assets/team-mark.png.asset.json";
 import teamBen from "@/assets/team-ben.png.asset.json";
-import teamIan from "@/assets/team-ian.png.asset.json";
+import teamIan from "@/assets/team-ian-v2.png.asset.json";
 import { ContactForm } from "@/components/contact-form";
 import { Eye, ShieldCheck, Layers } from "lucide-react";
 
@@ -77,13 +77,13 @@ const TEAM_LEAD = [
   { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-top" },
   { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-top" },
   { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-top" },
-  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: "/team-anthony.jpg", pos: "object-center" },
+  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamAnthony.url, pos: "object-center" },
 ];
 const TEAM_ADVISORS = [
   { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-top" },
   { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url, pos: "object-top" },
   { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-top" },
-  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url, pos: "object-top" },
+  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url, pos: "object-center" },
 ];
 
 function Index() {
