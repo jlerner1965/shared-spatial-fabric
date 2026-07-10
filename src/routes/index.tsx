@@ -357,10 +357,10 @@ function Index() {
               Let's build the spatial layer <span className="text-primary text-glow">together.</span>
             </h2>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
+              For SDKs, licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
+              {["SDKs", "Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
                 <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
               ))}
             </div>

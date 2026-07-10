@@ -100,7 +100,7 @@ export function ContactForm() {
         <div>
           <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Inquiry type</label>
           <select value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary">
-            {["Licensing", "Strategic partnership", "Developer collaboration", "Investor inquiry", "Enterprise", "Media", "General inquiry"].map((t) => (
+            {["SDKs", "Licensing", "Strategic partnership", "Developer collaboration", "Investor inquiry", "Enterprise", "Media", "General inquiry"].map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>
