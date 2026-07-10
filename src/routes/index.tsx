@@ -224,8 +224,8 @@ function Index() {
         <div className="grid gap-6 md:grid-cols-2">
           {PILLARS.map((p) => (
             <article key={p.tag} className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:border-primary/50 hover:shadow-[var(--shadow-glow)]">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="relative aspect-[16/10] overflow-hidden bg-background">
+                <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                 <div className="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/60 px-2.5 py-0.5 font-mono text-xs text-primary backdrop-blur">
                   {p.tag}
