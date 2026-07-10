@@ -77,7 +77,7 @@ const TEAM_LEAD = [
   { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-top" },
   { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-top" },
   { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-top" },
-  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamAnthony.url, pos: "object-left-top" },
+  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: "/team-anthony.jpg", pos: "object-center" },
 ];
 const TEAM_ADVISORS = [
   { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-top" },
