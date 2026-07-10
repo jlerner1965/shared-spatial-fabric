@@ -11,11 +11,11 @@ import visionConcert from "@/assets/vision-concert.jpg.asset.json";
 import teamNick from "@/assets/team-nick.png.asset.json";
 import teamPerry from "@/assets/team-perry.png.asset.json";
 import teamDmitri from "@/assets/team-dmitri.png.asset.json";
-import teamAnthony from "@/assets/team-anthony-v2.png.asset.json";
+import teamAnthony from "@/assets/team-ian-v2.png.asset.json";
 import teamCynthia from "@/assets/team-cynthia.png.asset.json";
 import teamMark from "@/assets/team-mark.png.asset.json";
 import teamBen from "@/assets/team-ben.png.asset.json";
-import teamIan from "@/assets/team-ian-v2.png.asset.json";
+import teamIan from "@/assets/team-anthony-v2.png.asset.json";
 import { ContactForm } from "@/components/contact-form";
 import { Eye, ShieldCheck, Layers } from "lucide-react";
 
