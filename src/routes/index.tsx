@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import heroHome from "@/assets/hero-home.jpg.asset.json";
-import pillarLiving from "@/assets/pillar-living.jpg.asset.json";
-import pillarIdentity from "@/assets/pillar-identity.jpg.asset.json";
+import pillarLiving from "@/assets/pillar-living-wookiee.png.asset.json";
+import pillarIdentity from "@/assets/pillar-identity-nick.jpg.asset.json";
 import pillarMessaging from "@/assets/pillar-messaging.jpg.asset.json";
 import solution from "@/assets/solution.jpg.asset.json";
 import visionFamily from "@/assets/vision-family.jpg.asset.json";
