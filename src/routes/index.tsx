@@ -67,10 +67,10 @@ const PRIMITIVES = [
 const USE_CASES = [
   { tag: "Identity", title: "Virtual ID", desc: "A persistent digital identity anchored to you or your pet. Leave a virtual calling card that follows you into any shared session and unlocks personalized, permissioned content." },
   { tag: "Expression", title: "Virtual skins: people", desc: "Dynamic outfits, avatars, and effects seen through AR glasses — always governed by consent and subscriptions, so you stay in control." },
-  { tag: "Expression", title: "Virtual skins: pets", desc: "Dress your pet in holographic outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive." },
+  { tag: "Expression", title: "Virtual skins: pets", desc: "Dress your pet in virtual outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive." },
   { tag: "Play", title: "Group games & sports", desc: "Tabletop tournaments and sports sims where everyone sees the same board anchored to the real world — a miniature stadium on your coffee table." },
-  { tag: "Live", title: "Live performances", desc: "Artists appear as holographic performers, synchronized for every viewer, turning any surface into a stage." },
-  { tag: "Learn", title: "Shared storytelling", desc: "Collaborative stories and lessons where holographic characters and scenery appear around you — built for education, training, and play." },
+  { tag: "Live", title: "Live performances", desc: "Artists appear as virtual performers, synchronized for every viewer, turning any surface into a stage." },
+  { tag: "Learn", title: "Shared storytelling", desc: "Collaborative stories and lessons where virtual characters and scenery appear around you — built for education, training, and play." },
 ];
 
 const TEAM_LEAD = [
@@ -324,7 +324,7 @@ function Index() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_LEAD.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
-                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-28 rounded-full border border-primary/30 object-cover" />
+                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-28 rounded-full border border-primary/30 object-cover object-top" />
                 <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
@@ -335,7 +335,7 @@ function Index() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_ADVISORS.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
-                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-24 rounded-full border border-primary/30 object-cover" />
+                <img src={p.photo} alt={p.name} loading="lazy" className="mx-auto aspect-square w-24 rounded-full border border-primary/30 object-cover object-top" />
                 <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
