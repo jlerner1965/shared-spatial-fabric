@@ -270,7 +270,7 @@ function Index() {
             One anchor. Many viewers. <span className="text-primary text-glow">The same wonder.</span>
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground">
-            Real humans in real spaces, seeing the same spatial anchored content simultaneously — powering creative performances, targeted experiences, and new markets that reward creators and IP holders.
+            Real humans in real spaces, seeing the same spatially anchored content simultaneously — powering creative performances, targeted experiences, and new markets that reward creators and IP holders.
           </p>
         </div>
       </section>
