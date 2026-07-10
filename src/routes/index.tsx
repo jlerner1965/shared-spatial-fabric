@@ -287,7 +287,7 @@ function Index() {
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { t: "Open ecosystem", d: "Works with the AR tools you know. SDKs Supporting Lens Studio, ARKit + RealityKit, Meta XR SDK, and ARCore, so creators keep their stack." },
+              { t: "Open ecosystem", d: "Works with the AR tools you know. SDKs supporting Lens Studio, ARKit + RealityKit, Meta XR SDK, and ARCore, so creators keep their stack." },
               { t: "IP & rights", d: "Robust rights management. Permissions, subscriptions, and parental controls keep your content safe and accessible only to approved users." },
               { t: "Multi-user by design", d: "Social AR from the ground up. Identity, session management, and state sync handle the heavy lifting so you focus on the experience." },
             ].map((c) => (
