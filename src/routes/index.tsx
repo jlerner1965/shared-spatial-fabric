@@ -283,7 +283,7 @@ function Index() {
             Open, interoperable, and built for many users.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            AR2 orchestrates identity, permissions, spatial anchors, and real-time sync — so you can build on top of the SDK with the tools you already use.
+            AR2 orchestrates identity, permissions, spatially anchored content, and real-time sync — so you can build on top of the SDK with the tools you already use.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
