@@ -61,7 +61,7 @@ const PILLARS = [
 const PRIMITIVES = [
   { n: "01", title: "Recognition", icon: Eye, desc: "Computer vision and AI detect people, pets, and objects, then store persistent spatial anchors that hold their position across sessions." },
   { n: "02", title: "Authorization", icon: ShieldCheck, desc: "Consent, permissions, and subscriptions govern every overlay. A secure identity layer keeps your digital self consistent across devices." },
-  { n: "03", title: "Display", icon: Layers, desc: "A rendering engine tuned for headsets and phones aligns digital content to the physical world with spatial mapping and occlusion." },
+  { n: "03", title: "Display", icon: Layers, desc: "AI-driven rendering engine tuned for AR glasses and smartphones aligns digital content to the physical world." },
 ];
 
 const USE_CASES = [
