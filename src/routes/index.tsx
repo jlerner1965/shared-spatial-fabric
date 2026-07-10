@@ -287,7 +287,7 @@ function Index() {
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { t: "Open ecosystem", d: "Works with the AR tools you know. The SDK supports Lens Studio, ARKit + RealityKit, Meta Spark, Meta XR SDK, and ARCore, so creators keep their stack." },
+              { t: "Open ecosystem", d: "Works with the AR tools you know. The SDK supports Lens Studio, ARKit + RealityKit, Meta XR SDK, and ARCore, so creators keep their stack." },
               { t: "IP & rights", d: "Robust rights management. Permissions, subscriptions, and parental controls keep your content safe and accessible only to approved users." },
               { t: "Multi-user by design", d: "Social AR from the ground up. Identity, session management, and state sync handle the heavy lifting so you focus on the experience." },
             ].map((c) => (
@@ -300,7 +300,7 @@ function Index() {
           <div className="mt-12 rounded-2xl border border-border/60 bg-background/40 p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Works with your stack</p>
             <div className="mt-4 flex flex-wrap gap-3 text-sm text-foreground/85">
-              {["Lens Studio", "ARKit + RealityKit", "Meta Spark", "Meta XR SDK", "ARCore"].map((s) => (
+              {["Lens Studio", "ARKit + RealityKit", "Meta XR SDK", "ARCore"].map((s) => (
                 <span key={s} className="rounded-full border border-border/60 bg-card px-3 py-1.5 font-mono text-xs">{s}</span>
               ))}
             </div>
