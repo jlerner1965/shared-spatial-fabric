@@ -129,7 +129,7 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img src={heroHome.url} alt="Two people in a plaza with holographic AR interfaces at dusk" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.55) 0%, oklch(0.14 0.02 240 / 0.6) 40%, oklch(0.14 0.02 240) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.35) 0%, oklch(0.14 0.02 240 / 0.45) 50%, oklch(0.14 0.02 240 / 0.85) 100%)" }} />
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative mx-auto flex min-h-[96vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40">
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
