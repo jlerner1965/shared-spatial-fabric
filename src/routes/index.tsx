@@ -91,7 +91,8 @@ function Index() {
     <SiteLayout>
       {/* Anchor statement */}
       <section className="relative isolate overflow-hidden border-y border-border/40">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, oklch(0.28 0.09 220 / 0.5), transparent 60%), linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.16 0.03 240) 100%)" }} />
+        <img src={heroHome.url} alt="Two people in a plaza with holographic AR interfaces at dusk" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.35) 0%, oklch(0.14 0.02 240 / 0.55) 50%, oklch(0.14 0.02 240 / 0.9) 100%)" }} />
         <div className="absolute inset-0 bg-grid opacity-15" />
         <div className="relative mx-auto max-w-6xl px-6 py-32">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
@@ -127,9 +128,7 @@ function Index() {
       </section>
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        <img src={heroHome.url} alt="Two people in a plaza with holographic AR interfaces at dusk" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.35) 0%, oklch(0.14 0.02 240 / 0.45) 50%, oklch(0.14 0.02 240 / 0.85) 100%)" }} />
+      <section className="relative isolate overflow-hidden border-y border-border/40 bg-background">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative mx-auto flex min-h-[96vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40">
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
