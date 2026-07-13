@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
-  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Send inquiry" },
 ] as const;
 
 export function SiteHeader() {
@@ -30,9 +30,6 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
-          <Link to="/contact" className="ml-4 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[var(--shadow-glow)]">
-            Send inquiry
-          </Link>
         </nav>
         <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X size={22} /> : <Menu size={22} />}
