@@ -74,15 +74,15 @@ const USE_CASES = [
 ];
 
 const TEAM_LEAD = [
-  { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-top" },
-  { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-top" },
-  { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-top" },
+  { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-center" },
+  { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-center" },
+  { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-center" },
   { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamAnthony.url, pos: "object-center" },
 ];
 const TEAM_ADVISORS = [
-  { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-top" },
-  { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url, pos: "object-top" },
-  { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-top" },
+  { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-center" },
+  { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url, pos: "object-center" },
+  { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-center" },
   { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url, pos: "object-center" },
 ];
 
