@@ -89,6 +89,43 @@ const TEAM_ADVISORS = [
 function Index() {
   return (
     <SiteLayout>
+      {/* Anchor statement */}
+      <section className="relative isolate overflow-hidden border-y border-border/40">
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, oklch(0.28 0.09 220 / 0.5), transparent 60%), linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.16 0.03 240) 100%)" }} />
+        <div className="absolute inset-0 bg-grid opacity-15" />
+        <div className="relative mx-auto max-w-6xl px-6 py-32">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_oklch(0.82_0.14_210)]" />
+            Recognition · Authorization · Display
+          </div>
+          <h2 className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+            Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
+          </h2>
+          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 US patents.
+          </p>
+        </div>
+      </section>
+
+      {/* Patent strip */}
+      <section className="border-b border-border/40 bg-card/30">
+        <div className="mx-auto max-w-7xl px-6 py-14">
+          <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            {[
+              { k: "34", v: "Issued US Patents" },
+              { k: "5", v: "Patent Families" },
+              { k: "3", v: "Primitives (R·A·D)" },
+              { k: "2018", v: "First Patent Issued" },
+            ].map((s) => (
+              <div key={s.v} className="text-center">
+                <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{s.k}</dt>
+                <dd className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img src={heroHome.url} alt="Two people in a plaza with holographic AR interfaces at dusk" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
@@ -101,20 +138,6 @@ function Index() {
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
             AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us.
           </p>
-          {/* Trust bar */}
-          <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/40 pt-6 sm:grid-cols-4">
-            {[
-              { k: "34", v: "Issued US Patents" },
-              { k: "5", v: "Patent Families" },
-              { k: "3", v: "Primitives (R·A·D)" },
-              { k: "2018", v: "First Patent Issued" },
-            ].map((s) => (
-              <div key={s.v}>
-                <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{s.k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.v}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
@@ -133,24 +156,6 @@ function Index() {
           </p>
           <p>
             These applications enable companies and users to create systems and markets for real humans in real spaces — aligning profit motives with what's good for real humans.
-          </p>
-        </div>
-      </section>
-
-      {/* Anchor statement */}
-      <section className="relative isolate overflow-hidden border-y border-border/40">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, oklch(0.28 0.09 220 / 0.5), transparent 60%), linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.16 0.03 240) 100%)" }} />
-        <div className="absolute inset-0 bg-grid opacity-15" />
-        <div className="relative mx-auto max-w-6xl px-6 py-32">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_oklch(0.82_0.14_210)]" />
-            Recognition · Authorization · Display
-          </div>
-          <h2 className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-            Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
-          </h2>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 US patents.
           </p>
         </div>
       </section>
