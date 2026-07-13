@@ -327,7 +327,9 @@ function Index() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_LEAD.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
-                <img src={p.photo} alt={p.name} loading="lazy" className={`mx-auto aspect-square w-28 rounded-full border border-primary/30 object-cover ${p.pos}`} />
+                <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                </div>
                 <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
@@ -338,7 +340,9 @@ function Index() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_ADVISORS.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
-                <img src={p.photo} alt={p.name} loading="lazy" className={`mx-auto aspect-square w-24 rounded-full border border-primary/30 object-cover ${p.pos}`} />
+                <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                </div>
                 <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
               </div>
