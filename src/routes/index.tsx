@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import heroHome from "@/assets/hero-home.jpg.asset.json";
-import pillarLiving from "@/assets/pillar-living-wookiee.png.asset.json";
+import pillarLiving from "@/assets/pillar-living-street.png.asset.json";
 import pillarIdentity from "@/assets/pillar-identity-nick-v2.jpg.asset.json";
 import pillarMessaging from "@/assets/pillar-messaging.jpg.asset.json";
 import solution from "@/assets/solution.jpg.asset.json";
@@ -313,7 +313,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-32">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Team</p>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
-            Meet the team.
+            The Team.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             A team of inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists behind an augmented-reality platform built on the RAD method and 34 issued U.S. patents.
