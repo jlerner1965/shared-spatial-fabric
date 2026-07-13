@@ -103,7 +103,7 @@ function Index() {
             Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
           </h2>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 US patents.
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build persistent, multi-user AR experiences anchored to real people, places, and pets. Backed by 34 US patents.
           </p>
         </div>
       </section>
