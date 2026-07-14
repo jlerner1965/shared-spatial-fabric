@@ -8,13 +8,13 @@ import solution from "@/assets/solution.jpg.asset.json";
 import visionFamily from "@/assets/vision-family.jpg.asset.json";
 import visionMma from "@/assets/vision-mma.jpg.asset.json";
 import visionConcert from "@/assets/vision-concert.jpg.asset.json";
-import teamNick from "@/assets/team-nick.png.asset.json";
-import teamPerry from "@/assets/team-perry.png.asset.json";
-import teamDmitri from "@/assets/team-dmitri.png.asset.json";
+import teamNick from "@/assets/team-nick-v2.jpg.asset.json";
+import teamPerry from "@/assets/team-perry-v2.jpg.asset.json";
+import teamDmitri from "@/assets/team-dmitri-v2.jpg.asset.json";
 import teamAnthony from "@/assets/team-anthony-v2.png.asset.json";
-import teamCynthia from "@/assets/team-cynthia.png.asset.json";
-import teamMark from "@/assets/team-mark.png.asset.json";
-import teamBen from "@/assets/team-ben.png.asset.json";
+import teamCynthia from "@/assets/team-cynthia-v2.jpg.asset.json";
+import teamMark from "@/assets/team-mark-v2.jpg.asset.json";
+import teamBen from "@/assets/team-ben-v2.jpg.asset.json";
 import teamIan from "@/assets/team-ian-v2.png.asset.json";
 import { ContactForm } from "@/components/contact-form";
 import { Eye, ShieldCheck, Layers } from "lucide-react";
@@ -77,13 +77,13 @@ const TEAM_LEAD = [
   { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-center" },
   { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-center" },
   { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-center" },
-  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamAnthony.url, pos: "object-[center_40%]" },
+  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamIan.url, pos: "object-center" },
 ];
 const TEAM_ADVISORS = [
   { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-center" },
   { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url, pos: "object-center" },
-  { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-[center_35%]" },
-  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamIan.url, pos: "object-center" },
+  { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-center" },
+  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamAnthony.url, pos: "object-center" },
 ];
 
 function Index() {
@@ -328,7 +328,7 @@ function Index() {
             {TEAM_LEAD.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
                 </div>
                 <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
@@ -341,7 +341,7 @@ function Index() {
             {TEAM_ADVISORS.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
                 </div>
                 <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
