@@ -69,7 +69,6 @@ export function ContactForm() {
   return (
     <form className="rounded-2xl border border-border/60 bg-card p-8" onSubmit={onSubmit}>
       <h3 className="font-display text-2xl font-semibold tracking-tight">Send inquiry</h3>
-      <p className="mt-2 text-sm text-muted-foreground">We respond to serious inquiries within two business days.</p>
 
       <div className="mt-6 space-y-4">
         <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
