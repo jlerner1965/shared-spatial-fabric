@@ -328,7 +328,7 @@ function Index() {
             {TEAM_LEAD.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
                 </div>
                 <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
@@ -341,7 +341,7 @@ function Index() {
             {TEAM_ADVISORS.map((p) => (
               <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full object-cover ${p.pos}`} />
+                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
                 </div>
                 <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
