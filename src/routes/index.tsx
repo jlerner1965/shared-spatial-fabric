@@ -110,7 +110,7 @@ function Index() {
 
       {/* Patent strip */}
       <section className="border-b border-border/40 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6 py-10">
+        <div className="mx-auto max-w-7xl px-6 py-6">
           <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {[
               { k: "34", v: "Issued US Patents" },
@@ -130,7 +130,7 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden border-y border-border/40 bg-background">
         <div className="absolute inset-0 bg-grid opacity-20" />
-        <div className="relative mx-auto flex min-h-[72vh] max-w-7xl flex-col justify-end px-6 pb-16 pt-28">
+        <div className="relative mx-auto flex min-h-[60vh] max-w-7xl flex-col justify-end px-6 pb-12 pt-20">
           <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
             A quiet possibility, <span className="text-primary text-glow">shared out loud.</span>
           </h1>
