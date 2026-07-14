@@ -22,10 +22,39 @@ function escapeHtml(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
+type RateLimiter = { limit: (options: { key: string }) => Promise<{ success: boolean }> };
+
+// Per-IP rate limit via the CONTACT_RATE_LIMIT binding in wrangler.jsonc.
+// Nitro's Cloudflare entry assigns the raw worker env (with all bindings) to
+// `globalThis.__env__` on every request; that's the only reliable way to reach
+// bindings from a route handler. Local `vite dev` has no binding: fail open.
+async function isRateLimited(request: Request): Promise<boolean> {
+  try {
+    const env = (globalThis as { __env__?: { CONTACT_RATE_LIMIT?: RateLimiter } }).__env__;
+    const limiter = env?.CONTACT_RATE_LIMIT;
+    if (!limiter) return false;
+    const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
+    const { success } = await limiter.limit({ key: ip });
+    return !success;
+  } catch (err) {
+    console.error("Rate limiter unavailable, failing open:", err);
+    return false;
+  }
+}
+
 export const Route = createFileRoute("/api/contact")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        if (await isRateLimited(request)) {
+          return Response.json(
+            {
+              error: "Too many messages from your connection — please wait a minute and try again.",
+            },
+            { status: 429 },
+          );
+        }
+
         let body: ContactPayload;
         try {
           body = (await request.json()) as ContactPayload;

@@ -43,7 +43,11 @@ Worker secrets (set once via `wrangler secret put`, already configured in prod):
 - `src/routes/index.tsx` — the entire homepage. Copy, team members, use cases
   etc. are plain data arrays at the top of the file.
 - `src/routes/api/contact.ts` — contact form endpoint (validates, honeypot,
-  sends via Resend REST API).
+  sends via Resend REST API). Spam guards: a hidden honeypot field (bots that
+  fill it get a fake success), and a per-IP rate limit of 3 submissions/minute
+  via the Workers rate-limiting binding in `wrangler.jsonc` (approximate —
+  counters are per-colo and eventually consistent; local dev has no binding
+  and fails open).
 - `src/components/` — layout shell, contact form, and the one shadcn/ui
   component in use (toasts).
 - `public/assets/` — all site images, referenced through the small

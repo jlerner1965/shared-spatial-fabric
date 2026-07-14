@@ -6,4 +6,13 @@
     { "pattern": "ar2project.com", "custom_domain": true },
     { "pattern": "www.ar2project.com", "custom_domain": true },
   ],
+  // Contact-form abuse guard: max 3 submissions per IP per 60s window.
+  // Consumed in src/routes/api/contact.ts via the CONTACT_RATE_LIMIT binding.
+  "ratelimits": [
+    {
+      "name": "CONTACT_RATE_LIMIT",
+      "namespace_id": "1001",
+      "simple": { "limit": 3, "period": 60 },
+    },
+  ],
 }
