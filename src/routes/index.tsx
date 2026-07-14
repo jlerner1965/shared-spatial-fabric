@@ -135,7 +135,7 @@ function Index() {
             A quiet possibility, <span className="text-primary text-glow">shared out loud.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us.
+            AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us{"\u00A0"}
           </p>
         </div>
       </section>
