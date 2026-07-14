@@ -34,15 +34,15 @@ export const Route = createFileRoute("/")({
 const PILLARS = [
   {
     tag: "01",
-    title: "Living Entities",
-    desc: "Humans and pets become natural, moving anchors for AR content — expressed through stock or customizable skins that respond to shared movement in real time.",
-    image: pillarLiving.url,
-  },
-  {
-    tag: "02",
     title: "Virtual Identification",
     desc: "Consent-based, real-time overlays of profiles, links, and calendar data — pivoting online audiences into meaningful interactions in real places.",
     image: pillarIdentity.url,
+  },
+  {
+    tag: "02",
+    title: "Living Entities",
+    desc: "Humans and pets become natural, moving anchors for AR content — expressed through stock or customizable skins that respond to shared movement in real time.",
+    image: pillarLiving.url,
   },
   {
     tag: "03",
