@@ -4,6 +4,6 @@
   "name": "ar2project-site",
   "routes": [
     { "pattern": "ar2project.com", "custom_domain": true },
-    { "pattern": "www.ar2project.com", "custom_domain": true }
-  ]
+    { "pattern": "www.ar2project.com", "custom_domain": true },
+  ],
 }

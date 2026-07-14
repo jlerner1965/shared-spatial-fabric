@@ -6,7 +6,11 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — AR2 Project" },
-      { name: "description", content: "Get in touch with the AR2 Project. Confidential meetings, licensing inquiries, and partnerships." },
+      {
+        name: "description",
+        content:
+          "Get in touch with the AR2 Project. Confidential meetings, licensing inquiries, and partnerships.",
+      },
       { property: "og:title", content: "Contact — AR2 Project" },
       { property: "og:description", content: "Licensing inquiries and partnerships." },
     ],
@@ -27,15 +31,24 @@ function ContactPage() {
               Get in touch
             </div>
             <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl">
-              Let's build the spatial layer <span className="text-primary text-glow">together.</span>
+              Let's build the spatial layer{" "}
+              <span className="text-primary text-glow">together.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              For licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
+              For licensing, partnerships, investment, developer collaboration, or press — send a
+              note and we'll route it to the right person on the team.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
-                <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
-              ))}
+              {["Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map(
+                (t) => (
+                  <span
+                    key={t}
+                    className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                  >
+                    {t}
+                  </span>
+                ),
+              )}
             </div>
           </div>
           <ContactForm />

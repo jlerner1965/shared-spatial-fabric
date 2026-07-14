@@ -42,15 +42,23 @@ export const Route = createFileRoute("/api/contact")({
         const email = body.email?.trim().slice(0, 255) ?? "";
         const message = body.message?.trim().slice(0, 5000) ?? "";
         if (!name || !email || !message || !EMAIL_RE.test(email)) {
-          return Response.json({ error: "Name, a valid email, and a message are required." }, { status: 400 });
+          return Response.json(
+            { error: "Name, a valid email, and a message are required." },
+            { status: 400 },
+          );
         }
 
         const apiKey = process.env.RESEND_API_KEY;
         const to = process.env.CONTACT_TO_EMAIL;
         const from = process.env.CONTACT_FROM_EMAIL ?? "AR2 Website <onboarding@resend.dev>";
         if (!apiKey || !to) {
-          console.error("Contact form is not configured: missing RESEND_API_KEY or CONTACT_TO_EMAIL.");
-          return Response.json({ error: "The contact form is temporarily unavailable." }, { status: 503 });
+          console.error(
+            "Contact form is not configured: missing RESEND_API_KEY or CONTACT_TO_EMAIL.",
+          );
+          return Response.json(
+            { error: "The contact form is temporarily unavailable." },
+            { status: 503 },
+          );
         }
 
         const fields: Array<[string, string | undefined]> = [
@@ -63,7 +71,10 @@ export const Route = createFileRoute("/api/contact")({
         ];
         const rows = fields
           .filter(([, v]) => v)
-          .map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#555;">${k}</td><td style="padding:4px 0;">${escapeHtml(v!)}</td></tr>`)
+          .map(
+            ([k, v]) =>
+              `<tr><td style="padding:4px 12px 4px 0;color:#555;">${k}</td><td style="padding:4px 0;">${escapeHtml(v!)}</td></tr>`,
+          )
           .join("");
         const html = `<h2 style="margin:0 0 12px;">New inquiry from the AR2 website</h2><table>${rows}</table><h3 style="margin:16px 0 4px;">Message</h3><p style="white-space:pre-wrap;">${escapeHtml(message)}</p>`;
 
@@ -84,7 +95,10 @@ export const Route = createFileRoute("/api/contact")({
 
         if (!res.ok) {
           console.error("Resend API error:", res.status, await res.text());
-          return Response.json({ error: "We couldn't send your message. Please try again." }, { status: 502 });
+          return Response.json(
+            { error: "We couldn't send your message. Please try again." },
+            { status: 502 },
+          );
         }
 
         return Response.json({ ok: true });

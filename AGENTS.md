@@ -1,10 +1,15 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Notes for AI agents
+
+Read `README.md` first — it covers the stack, deploy flow, secrets, and the
+fork/upstream relationship.
+
+- This is the **production fork**. The Lovable-connected original is the
+  `upstream` remote; do not push to it, and do not merge from it without being
+  asked.
+- Deploys go to a Cloudflare Worker: `npm run deploy`. Never run
+  `wrangler delete`.
+- The Cloudflare zone for ar2project.com carries the client's live
+  Microsoft 365 email — never touch MX or TXT records.
+- TanStack Start file-based routing conventions are documented in
+  `src/routes/README.md`. `src/routeTree.gen.ts` is generated — never edit it
+  by hand.

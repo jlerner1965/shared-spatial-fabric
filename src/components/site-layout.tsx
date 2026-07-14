@@ -14,9 +14,16 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={logo.url} alt="AR² dragon logo" width={28} height={28} className="drop-shadow-[0_0_12px_oklch(0.82_0.14_210/0.6)]" />
+          <img
+            src={logo.url}
+            alt="AR² dragon logo"
+            width={28}
+            height={28}
+            className="drop-shadow-[0_0_12px_oklch(0.82_0.14_210/0.6)]"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">
-            AR<sup className="text-primary">2</sup> <span className="text-muted-foreground font-normal">Project</span>
+            AR<sup className="text-primary">2</sup>{" "}
+            <span className="text-muted-foreground font-normal">Project</span>
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
@@ -31,7 +38,11 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
+        <button
+          className="lg:hidden text-foreground"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
@@ -39,7 +50,13 @@ export function SiteHeader() {
         <div className="lg:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl">
           <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4">
             {NAV.map((n) => (
-              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2 text-sm text-muted-foreground hover:text-foreground [&.active]:text-primary" activeOptions={{ exact: n.to === "/" }}>
+              <Link
+                key={n.to}
+                to={n.to}
+                onClick={() => setOpen(false)}
+                className="py-2 text-sm text-muted-foreground hover:text-foreground [&.active]:text-primary"
+                activeOptions={{ exact: n.to === "/" }}
+              >
                 {n.label}
               </Link>
             ))}
@@ -58,7 +75,9 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-2.5">
               <img src={logo.url} alt="AR² dragon logo" width={28} height={28} />
-              <span className="font-display text-lg font-semibold">AR<sup className="text-primary">2</sup> Project</span>
+              <span className="font-display text-lg font-semibold">
+                AR<sup className="text-primary">2</sup> Project
+              </span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-foreground/90">
               Empowering collaborative virtual user experiences in the real world.
@@ -100,7 +119,9 @@ export function PageHero({
   tall?: boolean;
 }) {
   return (
-    <section className={`relative isolate overflow-hidden ${tall ? "min-h-[92vh]" : "min-h-[60vh]"} flex items-end`}>
+    <section
+      className={`relative isolate overflow-hidden ${tall ? "min-h-[92vh]" : "min-h-[60vh]"} flex items-end`}
+    >
       <img src={image} alt={imageAlt} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="absolute inset-0 bg-grid opacity-30" />

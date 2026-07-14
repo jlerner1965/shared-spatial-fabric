@@ -30,3 +30,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local env files (secrets live in Cloudflare worker secrets)
+.env
+.env.*

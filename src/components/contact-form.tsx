@@ -73,7 +73,8 @@ export function ContactForm() {
       <div className="rounded-2xl border border-border/60 bg-card p-8">
         <h3 className="font-display text-2xl font-semibold tracking-tight">Thank you.</h3>
         <p className="mt-3 text-sm text-muted-foreground">
-          Your message has reached the AR2 team. We respond to serious inquiries within two business days.
+          Your message has reached the AR2 team. We respond to serious inquiries within two business
+          days.
         </p>
         <button
           onClick={() => setSent(false)}
@@ -91,43 +92,124 @@ export function ContactForm() {
 
       <div className="mt-6 space-y-4">
         <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
-          <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} /></label>
+          <label>
+            Website
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+          </label>
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Full name</label>
-          <input type="text" required maxLength={100} value={name} onChange={(e) => setName(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Full name
+          </label>
+          <input
+            type="text"
+            required
+            maxLength={100}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Email</label>
-          <input type="email" required maxLength={255} value={email} onChange={(e) => setEmail(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Email
+          </label>
+          <input
+            type="email"
+            required
+            maxLength={255}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Company</label>
-            <input type="text" maxLength={200} value={organization} onChange={(e) => setOrganization(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              Company
+            </label>
+            <input
+              type="text"
+              maxLength={200}
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+            />
           </div>
           <div>
-            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Job title</label>
-            <input type="text" maxLength={200} value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+            <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              Job title
+            </label>
+            <input
+              type="text"
+              maxLength={200}
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
+              className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+            />
           </div>
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Phone (optional)</label>
-          <input type="tel" maxLength={40} value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Phone (optional)
+          </label>
+          <input
+            type="tel"
+            maxLength={40}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Inquiry type</label>
-          <select value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary">
-            {["SDKs", "Licensing", "Strategic partnership", "Developer collaboration", "Investor inquiry", "Enterprise", "Media", "General inquiry"].map((t) => (
-              <option key={t} value={t}>{t}</option>
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Inquiry type
+          </label>
+          <select
+            value={inquiryType}
+            onChange={(e) => setInquiryType(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          >
+            {[
+              "SDKs",
+              "Licensing",
+              "Strategic partnership",
+              "Developer collaboration",
+              "Investor inquiry",
+              "Enterprise",
+              "Media",
+              "General inquiry",
+            ].map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
             ))}
           </select>
         </div>
         <div>
-          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Message</label>
-          <textarea rows={4} required maxLength={5000} value={message} onChange={(e) => setMessage(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
+          <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            Message
+          </label>
+          <textarea
+            rows={4}
+            required
+            maxLength={5000}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
+          />
         </div>
-        <button type="submit" disabled={submitting} className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.01] disabled:opacity-60">
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.01] disabled:opacity-60"
+        >
           {submitting ? "Sending…" : "Send inquiry"}
         </button>
       </div>

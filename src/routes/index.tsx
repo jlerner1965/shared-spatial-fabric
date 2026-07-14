@@ -23,9 +23,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AR2 — Shared AR, anchored to the real world" },
-      { name: "description", content: "AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents." },
+      {
+        name: "description",
+        content:
+          "AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build multi-user AR anchored to real people, places, and pets. Backed by 34 granted US patents.",
+      },
       { property: "og:title", content: "AR2 — Shared AR, anchored to the real world" },
-      { property: "og:description", content: "Recognition · Authorization · Display. The spatial computing layer for multi-user augmented reality." },
+      {
+        property: "og:description",
+        content:
+          "Recognition · Authorization · Display. The spatial computing layer for multi-user augmented reality.",
+      },
     ],
   }),
   component: Index,
@@ -59,31 +67,99 @@ const PILLARS = [
 ];
 
 const PRIMITIVES = [
-  { n: "01", title: "Recognition", icon: Eye, desc: "Computer vision and AI detect people, pets, and objects, then store persistent spatial anchors that hold their position across sessions." },
-  { n: "02", title: "Authorization", icon: ShieldCheck, desc: "Consent, subscription, permissions, geolocation, user/group authentications, biometric information, security clearance, and other access controls govern every digital overlay." },
-  { n: "03", title: "Display", icon: Layers, desc: "AI-driven rendering engine tuned for AR glasses and smartphones aligns digital content to the physical world." },
+  {
+    n: "01",
+    title: "Recognition",
+    icon: Eye,
+    desc: "Computer vision and AI detect people, pets, and objects, then store persistent spatial anchors that hold their position across sessions.",
+  },
+  {
+    n: "02",
+    title: "Authorization",
+    icon: ShieldCheck,
+    desc: "Consent, subscription, permissions, geolocation, user/group authentications, biometric information, security clearance, and other access controls govern every digital overlay.",
+  },
+  {
+    n: "03",
+    title: "Display",
+    icon: Layers,
+    desc: "AI-driven rendering engine tuned for AR glasses and smartphones aligns digital content to the physical world.",
+  },
 ];
 
 const USE_CASES = [
-  { tag: "Identity", title: "Virtual ID", desc: "A persistent digital identity anchored to you or your pet. Leave a virtual calling card that follows you into any shared session and unlocks personalized, permissioned content." },
-  { tag: "Expression", title: "Virtual skins: people", desc: "Dynamic outfits, avatars, and effects seen through AR glasses — always governed by consent and subscriptions, so you stay in control." },
-  { tag: "Expression", title: "Virtual skins: pets", desc: "Dress your pet in virtual outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive." },
-  { tag: "Play", title: "Group games & sports", desc: "Tabletop tournaments and sports sims where everyone sees the same board anchored to the real world — a miniature stadium on your coffee table." },
-  { tag: "Live", title: "Live performances", desc: "Artists appear as virtual performers, synchronized for every viewer, turning any surface into a stage." },
-  { tag: "Learn", title: "Shared storytelling", desc: "Collaborative stories and lessons where virtual characters and scenery appear around you — built for education, training, and play." },
+  {
+    tag: "Identity",
+    title: "Virtual ID",
+    desc: "A persistent digital identity anchored to you or your pet. Leave a virtual calling card that follows you into any shared session and unlocks personalized, permissioned content.",
+  },
+  {
+    tag: "Expression",
+    title: "Virtual skins: people",
+    desc: "Dynamic outfits, avatars, and effects seen through AR glasses — always governed by consent and subscriptions, so you stay in control.",
+  },
+  {
+    tag: "Expression",
+    title: "Virtual skins: pets",
+    desc: "Dress your pet in virtual outfits. Recognition keeps tracking the animal so their virtual persona stays anchored and responsive.",
+  },
+  {
+    tag: "Play",
+    title: "Group games & sports",
+    desc: "Tabletop tournaments and sports sims where everyone sees the same board anchored to the real world — a miniature stadium on your coffee table.",
+  },
+  {
+    tag: "Live",
+    title: "Live performances",
+    desc: "Artists appear as virtual performers, synchronized for every viewer, turning any surface into a stage.",
+  },
+  {
+    tag: "Learn",
+    title: "Shared storytelling",
+    desc: "Collaborative stories and lessons where virtual characters and scenery appear around you — built for education, training, and play.",
+  },
 ];
 
+// CAUTION: Anthony Borquez renders team-ian-v2 and Ian Schick renders team-anthony-v2
+// — the photo filenames and the displayed names are cross-wired. This came from the
+// original handoff and has not been verified against the real people. If you touch
+// these photos, confirm the faces with the client; do not trust the filenames.
 const TEAM_LEAD = [
-  { name: "Nick Hariton", role: "Chief Executive Officer", photo: teamNick.url, pos: "object-center" },
+  {
+    name: "Nick Hariton",
+    role: "Chief Executive Officer",
+    photo: teamNick.url,
+    pos: "object-center",
+  },
   { name: "Perry Lerner", role: "Chair", photo: teamPerry.url, pos: "object-center" },
-  { name: "Prof. Dmitri Williams", role: "Chief Science Officer", photo: teamDmitri.url, pos: "object-center" },
-  { name: "Prof. Anthony Borquez", role: "Development Partner", photo: teamIan.url, pos: "object-center" },
+  {
+    name: "Prof. Dmitri Williams",
+    role: "Chief Science Officer",
+    photo: teamDmitri.url,
+    pos: "object-center",
+  },
+  {
+    name: "Prof. Anthony Borquez",
+    role: "Development Partner",
+    photo: teamIan.url,
+    pos: "object-center",
+  },
 ];
 const TEAM_ADVISORS = [
-  { name: "Cynthia Veneciano, Ph.D.", role: "Strategic Advisor", photo: teamCynthia.url, pos: "object-center" },
+  {
+    name: "Cynthia Veneciano, Ph.D.",
+    role: "Strategic Advisor",
+    photo: teamCynthia.url,
+    pos: "object-center",
+  },
   { name: "Mark Guilarte", role: "Strategic Advisor", photo: teamMark.url, pos: "object-center" },
   { name: "Prof. Ben Lee", role: "Strategic Advisor", photo: teamBen.url, pos: "object-center" },
-  { name: "Ian Schick, Ph.D., Esq.", role: "Strategic Advisor", photo: teamAnthony.url, pos: "object-center" },
+  {
+    name: "Ian Schick, Ph.D., Esq.",
+    role: "Strategic Advisor",
+    photo: teamAnthony.url,
+    pos: "object-center",
+  },
 ];
 
 function Index() {
@@ -91,8 +167,20 @@ function Index() {
     <SiteLayout>
       {/* Anchor statement */}
       <section className="relative isolate overflow-hidden border-y border-border/40">
-        <img src={heroHome.url} alt="Two people in a plaza with holographic AR interfaces at dusk" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.35) 0%, oklch(0.14 0.02 240 / 0.55) 50%, oklch(0.14 0.02 240 / 0.9) 100%)" }} />
+        <img
+          src={heroHome.url}
+          alt="Two people in a plaza with holographic AR interfaces at dusk"
+          width={1920}
+          height={1088}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.14 0.02 240 / 0.35) 0%, oklch(0.14 0.02 240 / 0.55) 50%, oklch(0.14 0.02 240 / 0.9) 100%)",
+          }}
+        />
         <div className="absolute inset-0 bg-grid opacity-15" />
         <div className="relative mx-auto max-w-6xl px-6 py-32">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
@@ -100,10 +188,13 @@ function Index() {
             Recognition · Authorization · Display
           </div>
           <h2 className="mt-8 max-w-5xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-            Anchor the digital world to <span className="text-primary text-glow">the real one.</span>
+            Anchor the digital world to{" "}
+            <span className="text-primary text-glow">the real one.</span>
           </h2>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and Display — empowering developers and platforms to build persistent, multi-user AR experiences anchored to real people, places, and pets. Backed by 34 US patents.
+            AR2 provides SDKs that deliver the core primitives — Recognition, Authorization, and
+            Display — empowering developers and platforms to build persistent, multi-user AR
+            experiences anchored to real people, places, and pets. Backed by 34 US patents.
           </p>
         </div>
       </section>
@@ -119,8 +210,12 @@ function Index() {
               { k: "2018", v: "First Patent Issued" },
             ].map((s) => (
               <div key={s.v} className="text-center">
-                <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">{s.k}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{s.v}</dd>
+                <dt className="font-display text-2xl font-semibold text-primary text-glow md:text-3xl">
+                  {s.k}
+                </dt>
+                <dd className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                  {s.v}
+                </dd>
               </div>
             ))}
           </dl>
@@ -135,7 +230,9 @@ function Index() {
             A quiet possibility, <span className="text-primary text-glow">shared out loud.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            AR should not pull us deeper into screens. It should help us engage more fully with the people and places right in front of us. The AR2 Project is a technology and IP company dedicated to this idea.
+            AR should not pull us deeper into screens. It should help us engage more fully with the
+            people and places right in front of us. The AR2 Project is a technology and IP company
+            dedicated to this idea.
           </p>
         </div>
       </section>
@@ -148,34 +245,61 @@ function Index() {
         </h2>
         <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            Our vision centers on shared experiences and genuine human connection made possible by AR glasses. In a time of increasing digital isolation, this technology should not pull us deeper into screens, but help us engage more fully with the people and places right in front of us.
+            Our vision centers on shared experiences and genuine human connection made possible by
+            AR glasses. In a time of increasing digital isolation, this technology should not pull
+            us deeper into screens, but help us engage more fully with the people and places right
+            in front of us.
           </p>
           <p>
-            We approach this through the lens of shared experiences, with a strong emphasis on social connectivity. Central to the vision are dynamic, spatially anchored tools that enhance collaboration, personalization, and meaningful human connections.
+            We approach this through the lens of shared experiences, with a strong emphasis on
+            social connectivity. Central to the vision are dynamic, spatially anchored tools that
+            enhance collaboration, personalization, and meaningful human connections.
           </p>
           <p>
-            These applications enable companies and users to create systems and markets for real humans in real spaces — aligning profit motives with what's good for real humans.
+            These applications enable companies and users to create systems and markets for real
+            humans in real spaces — aligning profit motives with what's good for real humans.
           </p>
         </div>
       </section>
 
       {/* Vision */}
       <section id="vision" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-32 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Vision</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+          AR2 — Vision
+        </p>
         <h2 className="mt-6 font-display text-3xl font-medium leading-tight tracking-tight md:text-5xl">
-          Technology that puts people <span className="text-primary text-glow">in the same moment.</span>
+          Technology that puts people{" "}
+          <span className="text-primary text-glow">in the same moment.</span>
         </h2>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-          In a time of increasing digital isolation, AR should not pull us deeper into screens — it should help us engage more fully with the people and places right in front of us. AR2 is the spatial computing layer for multi-user augmented reality: shared sessions, anchored identity, and content that lives in the real world.
+          In a time of increasing digital isolation, AR should not pull us deeper into screens — it
+          should help us engage more fully with the people and places right in front of us. AR2 is
+          the spatial computing layer for multi-user augmented reality: shared sessions, anchored
+          identity, and content that lives in the real world.
         </p>
         <div className="mt-16 grid gap-6 text-left md:grid-cols-2">
           {[
-            { t: "Generational connection", d: "Anchored experiences that bring families and communities into the same shared moment, in the same physical place.", img: visionFamily.url, alt: "Grandparents sharing a moment with a holographic granddaughter singing" },
-            { t: "Live performances", d: "Concerts, sports, and events where every viewer sees the same synchronized performer in their space.", img: visionMma.url, alt: "Friends wearing AR glasses watching a shared holographic MMA match on a coffee table" },
+            {
+              t: "Generational connection",
+              d: "Anchored experiences that bring families and communities into the same shared moment, in the same physical place.",
+              img: visionFamily.url,
+              alt: "Grandparents sharing a moment with a holographic granddaughter singing",
+            },
+            {
+              t: "Live performances",
+              d: "Concerts, sports, and events where every viewer sees the same synchronized performer in their space.",
+              img: visionMma.url,
+              alt: "Friends wearing AR glasses watching a shared holographic MMA match on a coffee table",
+            },
           ].map((v) => (
             <div key={v.t} className="overflow-hidden rounded-2xl border border-border/60 bg-card">
               <div className="aspect-[4/3] w-full overflow-hidden">
-                <img src={v.img} alt={v.alt} className="h-full w-full object-cover" loading="lazy" />
+                <img
+                  src={v.img}
+                  alt={v.alt}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6">
                 <h3 className="font-display text-lg font-semibold">{v.t}</h3>
@@ -187,25 +311,37 @@ function Index() {
       </section>
 
       {/* Technology / SDK */}
-      <section id="technology" className="relative scroll-mt-24 border-y border-border/40 bg-card/30">
+      <section
+        id="technology"
+        className="relative scroll-mt-24 border-y border-border/40 bg-card/30"
+      >
         <div className="mx-auto max-w-7xl px-6 py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">The AR2 SDK</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            The AR2 SDK
+          </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
             Three primitives. Endless spatial experiences.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Every AR2 experience runs on the same foundation. Recognition understands the scene, Authorization governs who and what may appear, and Display renders it precisely into the real world.
+            Every AR2 experience runs on the same foundation. Recognition understands the scene,
+            Authorization governs who and what may appear, and Display renders it precisely into the
+            real world.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {PRIMITIVES.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-border/60 bg-background/40 p-8">
+              <div
+                key={p.title}
+                className="rounded-2xl border border-border/60 bg-background/40 p-8"
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <p.icon size={20} />
                   </div>
                   <span className="font-mono text-xs text-primary">{p.n}</span>
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight">{p.title}</h3>
+                <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight">
+                  {p.title}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
               </div>
             ))}
@@ -215,7 +351,9 @@ function Index() {
 
       {/* Four Pillars */}
       <section className="mx-auto max-w-5xl px-6 py-24 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">The AR2 Project</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+          The AR2 Project
+        </p>
         <h2 className="mt-6 font-display text-3xl font-medium leading-tight tracking-tight md:text-4xl">
           Spatially anchored tools for shared experience.
         </h2>
@@ -224,9 +362,17 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 pb-32">
         <div className="grid gap-6 md:grid-cols-2">
           {PILLARS.map((p) => (
-            <article key={p.tag} className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:border-primary/50 hover:shadow-[var(--shadow-glow)]">
+            <article
+              key={p.tag}
+              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:border-primary/50 hover:shadow-[var(--shadow-glow)]"
+            >
               <div className="relative aspect-[16/10] overflow-hidden bg-background">
-                <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105" />
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                />
                 <div className="absolute left-5 top-5 rounded-full border border-primary/40 bg-background/60 px-2.5 py-0.5 font-mono text-xs text-primary backdrop-blur">
                   {p.tag}
                 </div>
@@ -243,20 +389,28 @@ function Index() {
       {/* Use Cases */}
       <section id="use-cases" className="scroll-mt-24 border-y border-border/40 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Use Cases</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            AR2 — Use Cases
+          </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
             From digital identity to living, shared worlds.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            The same patent-protected primitives unlock a wide range of experiences — each one multi-user and anchored to reality by default.
+            The same patent-protected primitives unlock a wide range of experiences — each one
+            multi-user and anchored to reality by default.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {USE_CASES.map((u) => (
-              <article key={u.title} className="group rounded-2xl border border-border/60 bg-background/60 p-7 transition-all hover:border-primary/50">
+              <article
+                key={u.title}
+                className="group rounded-2xl border border-border/60 bg-background/60 p-7 transition-all hover:border-primary/50"
+              >
                 <div className="inline-flex rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-widest text-primary">
                   {u.tag}
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold tracking-tight">{u.title}</h3>
+                <h3 className="mt-5 font-display text-xl font-semibold tracking-tight">
+                  {u.title}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
               </article>
             ))}
@@ -266,15 +420,31 @@ function Index() {
 
       {/* Solution */}
       <section className="relative isolate overflow-hidden">
-        <img src={solution.url} alt="People gathered outdoors watching a shared point of cyan light" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.14 0.02 240 / 0.6) 50%, oklch(0.14 0.02 240) 100%)" }} />
+        <img
+          src={solution.url}
+          alt="People gathered outdoors watching a shared point of cyan light"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.14 0.02 240) 0%, oklch(0.14 0.02 240 / 0.6) 50%, oklch(0.14 0.02 240) 100%)",
+          }}
+        />
         <div className="relative mx-auto max-w-4xl px-6 py-32 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">The Shared Layer</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            The Shared Layer
+          </p>
           <h2 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            One anchor. Many viewers. <span className="text-primary text-glow">The same wonder.</span>
+            One anchor. Many viewers.{" "}
+            <span className="text-primary text-glow">The same wonder.</span>
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground">
-            Real humans in real spaces, seeing the same spatially anchored content simultaneously — powering creative performances, targeted experiences, and new markets that reward creators and IP holders.
+            Real humans in real spaces, seeing the same spatially anchored content simultaneously —
+            powering creative performances, targeted experiences, and new markets that reward
+            creators and IP holders.
           </p>
         </div>
       </section>
@@ -282,18 +452,30 @@ function Index() {
       {/* Platform */}
       <section id="platform" className="scroll-mt-24 border-y border-border/40 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Platform</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            AR2 — Platform
+          </p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
             Open, interoperable, and built for many users.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            AR2 orchestrates identity, permissions, spatially anchored content, and real-time sync — so you can build on top of the SDK with the tools you already use.
+            AR2 orchestrates identity, permissions, spatially anchored content, and real-time sync —
+            so you can build on top of the SDK with the tools you already use.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[
-              { t: "Open ecosystem", d: "Works with the AR tools you know. SDKs supporting Lens Studio, ARKit + RealityKit, Meta XR SDK, and ARCore, so creators keep their stack." },
-              { t: "IP & rights", d: "Robust rights management. Permissions, subscriptions, and parental controls keep your content safe and accessible only to approved users." },
-              { t: "Multi-user by design", d: "Social AR from the ground up. Identity, session management, and state sync handle the heavy lifting so you focus on the experience." },
+              {
+                t: "Open ecosystem",
+                d: "Works with the AR tools you know. SDKs supporting Lens Studio, ARKit + RealityKit, Meta XR SDK, and ARCore, so creators keep their stack.",
+              },
+              {
+                t: "IP & rights",
+                d: "Robust rights management. Permissions, subscriptions, and parental controls keep your content safe and accessible only to approved users.",
+              },
+              {
+                t: "Multi-user by design",
+                d: "Social AR from the ground up. Identity, session management, and state sync handle the heavy lifting so you focus on the experience.",
+              },
             ].map((c) => (
               <div key={c.t} className="rounded-2xl border border-border/60 bg-background/40 p-8">
                 <h3 className="font-display text-xl font-semibold tracking-tight">{c.t}</h3>
@@ -302,10 +484,17 @@ function Index() {
             ))}
           </div>
           <div className="mt-12 rounded-2xl border border-border/60 bg-background/40 p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Works with your stack</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              Works with your stack
+            </p>
             <div className="mt-4 flex flex-wrap gap-3 text-sm text-foreground/85">
               {["Lens Studio", "ARKit + RealityKit", "Meta XR SDK", "ARCore"].map((s) => (
-                <span key={s} className="rounded-full border border-border/60 bg-card px-3 py-1.5 font-mono text-xs">{s}</span>
+                <span
+                  key={s}
+                  className="rounded-full border border-border/60 bg-card px-3 py-1.5 font-mono text-xs"
+                >
+                  {s}
+                </span>
               ))}
             </div>
           </div>
@@ -315,36 +504,68 @@ function Index() {
       {/* Team */}
       <section id="team" className="scroll-mt-24 border-t border-border/40 bg-card/30">
         <div className="mx-auto max-w-7xl px-6 py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">AR2 — Team</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            AR2 — Team
+          </p>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
             The Team.
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            A team of inventors, scientists, lawyers, university professors, entrepreneurs, and media specialists behind an augmented-reality platform built on the RAD method and 34 issued U.S. patents.
+            A team of inventors, scientists, lawyers, university professors, entrepreneurs, and
+            media specialists behind an augmented-reality platform built on the RAD method and 34
+            issued U.S. patents.
           </p>
 
-          <p className="mt-14 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">Leadership</p>
+          <p className="mt-14 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+            Leadership
+          </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_LEAD.map((p) => (
-              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
+              <div
+                key={p.name}
+                className="rounded-xl border border-border/60 bg-background/60 p-5 text-center"
+              >
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
+                  <img
+                    src={p.photo}
+                    alt={p.name}
+                    loading="lazy"
+                    className={`h-full w-full scale-110 object-cover ${p.pos}`}
+                  />
                 </div>
-                <div className="mt-4 font-display text-lg font-semibold tracking-tight">{p.name}</div>
-                <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
+                <div className="mt-4 font-display text-lg font-semibold tracking-tight">
+                  {p.name}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                  {p.role}
+                </div>
               </div>
             ))}
           </div>
 
-          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">Strategic advisors</p>
+          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+            Strategic advisors
+          </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM_ADVISORS.map((p) => (
-              <div key={p.name} className="rounded-xl border border-border/60 bg-background/60 p-5 text-center">
+              <div
+                key={p.name}
+                className="rounded-xl border border-border/60 bg-background/60 p-5 text-center"
+              >
                 <div className="mx-auto aspect-square w-28 overflow-hidden rounded-full border border-primary/30 bg-primary/10">
-                  <img src={p.photo} alt={p.name} loading="lazy" className={`h-full w-full scale-110 object-cover ${p.pos}`} />
+                  <img
+                    src={p.photo}
+                    alt={p.name}
+                    loading="lazy"
+                    className={`h-full w-full scale-110 object-cover ${p.pos}`}
+                  />
                 </div>
-                <div className="mt-4 font-display text-base font-semibold tracking-tight">{p.name}</div>
-                <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
+                <div className="mt-4 font-display text-base font-semibold tracking-tight">
+                  {p.name}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+                  {p.role}
+                </div>
               </div>
             ))}
           </div>
@@ -352,7 +573,10 @@ function Index() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative isolate scroll-mt-24 overflow-hidden border-t border-border/40">
+      <section
+        id="contact"
+        className="relative isolate scroll-mt-24 overflow-hidden border-t border-border/40"
+      >
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 -z-10 bg-grid opacity-20" />
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-32 md:grid-cols-2 md:gap-12">
@@ -362,14 +586,29 @@ function Index() {
               Get in touch
             </div>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl">
-              Let's build the spatial layer <span className="text-primary text-glow">together.</span>
+              Let's build the spatial layer{" "}
+              <span className="text-primary text-glow">together.</span>
             </h2>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              For SDKs, licensing, partnerships, investment, developer collaboration, or press — send a note and we'll route it to the right person on the team.
+              For SDKs, licensing, partnerships, investment, developer collaboration, or press —
+              send a note and we'll route it to the right person on the team.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
-              {["SDKs", "Licensing", "Partnerships", "Investment", "Developers", "Enterprise", "Media"].map((t) => (
-                <span key={t} className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{t}</span>
+              {[
+                "SDKs",
+                "Licensing",
+                "Partnerships",
+                "Investment",
+                "Developers",
+                "Enterprise",
+                "Media",
+              ].map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                >
+                  {t}
+                </span>
               ))}
             </div>
           </div>

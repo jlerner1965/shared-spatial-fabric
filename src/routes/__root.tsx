@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -38,9 +37,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -79,18 +75,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "AR2 Project — Collaborative AR in the Real World" },
-      { name: "description", content: "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging." },
+      {
+        name: "description",
+        content:
+          "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging.",
+      },
       { name: "author", content: "The AR2 Project" },
       { name: "theme-color", content: "#0a1024" },
       { property: "og:title", content: "AR2 Project — Collaborative AR in the Real World" },
-      { property: "og:description", content: "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging." },
+      {
+        property: "og:description",
+        content:
+          "The AR2 Project builds shared, spatially anchored AR experiences that bring people together in real spaces — Living Entities, Virtual ID, AR Entertainment, and Persistent Messaging.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://ar2project.com/" },
       { property: "og:image", content: "https://ar2project.com/assets/hero-home.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://ar2project.com/assets/hero-home.jpg" },
       { name: "twitter:title", content: "AR2 Project — Collaborative AR in the Real World" },
-      { name: "twitter:description", content: "Shared, spatially anchored AR experiences that bring people together in real spaces." },
+      {
+        name: "twitter:description",
+        content:
+          "Shared, spatially anchored AR experiences that bring people together in real spaces.",
+      },
     ],
     links: [
       {
@@ -101,7 +109,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: "https://ar2project.com/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
