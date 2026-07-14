@@ -32,6 +32,25 @@ export function ContactForm() {
     }
     setSubmitting(true);
     try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          organization: organization.trim(),
+          jobTitle: jobTitle.trim(),
+          phone: phone.trim(),
+          inquiryType,
+          message: trimmedMessage,
+          website,
+        }),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        toast.error(data?.error ?? "Something went wrong. Please try again.");
+        return;
+      }
       setSent(true);
       setName("");
       setEmail("");

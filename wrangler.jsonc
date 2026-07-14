@@ -1,0 +1,9 @@
+{
+  // Deploy identity for the AR2 marketing site. Nitro merges this into the
+  // generated .output/server/wrangler.json at build time.
+  "name": "ar2project-site",
+  "routes": [
+    { "pattern": "ar2project.com", "custom_domain": true },
+    { "pattern": "www.ar2project.com", "custom_domain": true }
+  ]
+}

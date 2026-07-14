@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = (process.env.SITE_URL ?? "https://ar2project.com").replace(/\/$/, "");
 
 const paths = ["/", "/contact"];
 
