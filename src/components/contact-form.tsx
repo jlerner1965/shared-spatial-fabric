@@ -108,9 +108,6 @@ export function ContactForm() {
           <label className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Message</label>
           <textarea rows={4} required maxLength={5000} value={message} onChange={(e) => setMessage(e.target.value)} className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-primary" />
         </div>
-        <p className="text-[11px] leading-relaxed text-muted-foreground/70">
-          We use your details only to respond to this inquiry — no newsletters, no third-party sharing.
-        </p>
         <button type="submit" disabled={submitting} className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.01] disabled:opacity-60">
           {submitting ? "Sending…" : "Send inquiry"}
         </button>
